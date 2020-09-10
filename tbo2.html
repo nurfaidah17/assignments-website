@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Teori Bahasa dan Otomata | Tugas 2</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="#">
+                <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+              </a>                
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="profil.html">Profil</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+      </div>
+  </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">NOTASI BIG O</h1>
+                <p class="lead"><b>Tugas 2</b> Teori Bahasa dan Otomata</p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify">
+                <h3>Definisi</h3>
+                <p><i>Big O Notation</i> adalah cara untuk mengkonversi keseluruhan langkah-langkah suatu algoritma kedalam bentuk 
+                  Aljabar, yaitu dengan menghiraukan konstanta yang lebih kecil dan koefisien yang tidak berdampak besar 
+                  terhadap keseluruhan kompleksitas permasalahan yang diselesaikan oleh algoritma tersebut.
+                  Terdapat dua macam penggunaan notasi ini:</p>
+                  <ol>
+                    <li><i>Infinite Asymptotic</i>, untuk menganalisa kompleksitas dari suatu algoritma</li>
+                      </p>
+                    <li><i>Infinitesimal Asymptotic</i>, untuk menggambarkan kesalahan dalam sebuah aproksimasi dalam 
+                      fungsi matematika</li>
+                  </ol>
+                <br>
+
+                <h3>Kegunaan</h3>
+                  <ol>
+                    <li>Dalam matematika digunakan untuk menggambarkan seberapa dekat deret hingga mendekati 
+                      fungsi tertentu, terutama dalam kasus deret Taylor terpotong atau ekspansi asimtotik.</li>
+                    <li>Dalam ilmu komputer digunakan dalam analisis tingkat kompleksitas algoritma. Dengan memahami Big-O Notation, 
+                      kita akan lebih mudah dalam melihat mana algoritma yang lebih efisien yang bisa kita gunakan untuk 
+                      menyelesaikan permasalahan yang sedang dihadapi.</li>
+                  </ol>
+                <br>
+                
+                <h3>Contoh-Contoh</h3>
+                <br>
+                    <table class="table table-bordered table-hover">
+                      <thead class="text-center">
+                        <tr>
+                          <th>Notasi Big O</th>
+                          <th>Nama</th>
+                          <th>Contoh</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>O(1)</td>
+                          <td>Konstan</td>
+                          <td>Menentukan apakah suatu bilangan ganjil atau genap</td>
+                        </tr>
+                        <tr>
+                          <td>O(log * n)</td>
+                          <td>Iterasi Logaritmik</td>
+                          <td>Algoritma pencarian Hopcraft dan Ullman untuk himpunan disjoint</td>
+                        </tr>
+                        <tr>
+                          <td>O(log n)</td>
+                          <td>Logaritmik</td>
+                          <td>Pencarian dalam list terurut dengan Binary Search Algorithm</td>
+                        </tr>
+                        <tr>
+                          <td>O((log n)<sup>c</sup>)</td>
+                          <td>Polilogaritmik</td>
+                          <td>Menentukan bilangan prima dengan AKS primality test</td>
+                        </tr>
+                        <tr>
+                          <td>O(n)</td>
+                          <td>Linear</td>
+                          <td>Pencarian dalam list tidak terurut</td>
+                        </tr>
+                        <tr>
+                          <td>O(n log n)</td>
+                          <td>Linearitmik</td>
+                          <td>Mengurutkan list dengan Heapsort</td>
+                        </tr>
+                        <tr>
+                          <td>O(n<sup>2</sup>)</td>
+                          <td>Kuadratik</td>
+                          <td>Mengurutkan list dengan Insertion Sort</td>
+                        </tr>
+                        <tr>
+                          <td>O(n<sup>c</sup>), c > 1</td>
+                          <td>Poliomial</td>
+                          <td>Pencarian shortest path dengan algoritma Floyd-Warshall</td>
+                        </tr>
+                        <tr>
+                          <td>O(c<sup>n</sup>)</td>
+                          <td>Eksponensial</td>
+                          <td>Pencarian solusi untuk traveling salesman problem</td>
+                        </tr>
+                        <tr>
+                          <td>O!</td>
+                          <td>Faktorial</td>
+                          <td>Menyelesaikan traveling salesman problem dengan menggunakan brute force</td>
+                        </tr>
+                        <tr>
+                          <td>O (2<sup>cn</sup>)</td>
+                          <td>Dobel Eksponensial</td>
+                          <td>Pencarian himpunan lengkap dari AC-Unifiers (Associative-Commutative Uunifiers)
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+              </div>
+            </div> <!-- Akhir Card -->
+          </div> <!-- Akhir Col-12 -->
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<br>
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2020 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
