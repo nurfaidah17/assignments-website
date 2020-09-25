@@ -43,41 +43,118 @@
         </div>
     </section>
 <!-- Akhir JUMBOTRON -->
-
 <br>
 
 <!-- Awal Content -->
     <div class="container">
         <div class="row">
-          <div class="col-md-8 mb-4"> <!-- Awal Col-8-->
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
             <div class="card">
-              <div class="card-body">
-                <h2>Masih dalam Proses Pengerjaan ... </h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis consequuntur commodi animi 
-                  esse earum minima, laboriosam mollitia! Eum natus assumenda quibusdam esse provident? Unde itaque 
-                  adipisci error voluptates eaque laboriosam.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis consequuntur commodi animi 
-                    esse earum minima, laboriosam mollitia! Eum natus assumenda quibusdam esse provident? Unde itaque 
-                    adipisci error voluptates eaque laboriosam.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis consequuntur commodi animi 
-                    esse earum minima, laboriosam mollitia! Eum natus assumenda quibusdam esse provident? Unde itaque 
-                    adipisci error voluptates eaque laboriosam.</p>
-              </div>
-            </div>
-          </div> <!-- Akhir Col-8 -->
+              <div class="card-body text-justify">
+                <h3>Apa itu <i>Query</i>?</h3>
+                <p><i>Query</i> adalah sebuah ekspresi bahasa yang menggambarkan data yang akan didapatkan kembali dari sebuah database. 
+                  <i>Query</i> adalah perintah-perintah untuk mengakses data pada sistem basis data. Dalam hubungannya dengan optimisasi query, 
+                  seringkali diasumsikan bahwa query-query tersebut dinyatakan dalam sebuah dasar-dasar isi dan sekumpulan cara orientasi, 
+                  yang memberikan optimizer pilihan-pilihan diantara alternatif prosedur-prosedur evaluasi. <i>Query</i> merupakan bagian dari basis 
+                  data. Untuk itu sistem basis data memerlukan metode terbaik untuk menjawab query. Pencarian strategi dalam pemrosesan query 
+                  sangat penting agar pemrosesan dapat dilakukan secara cepat. Pada beberapa Data Base Management System (DBMS), pemroses query 
+                  memilih dari sekumpulan strategi dengan berbasiskan heuristik tertentu. </p>
+                  <p>Optimasi merupakan suatu langkah untuk mengoptimalkan waktu menjadi lebih efisien. Ketika sebuah query diberikan pada 
+                    sistem basis data, optimasi penting dilakukan untuk memilih strategi yang efisien untuk mengevaluasi ekspresi relasi yang 
+                    ditentukan.</p>
+                  <p>Optimasi Query adalah suatu proses menganalisa query untuk menentukan sumber-sumber apa saja yang digunakan oleh query 
+                    tersebut dan apakah penggunaan dari sumber tersebut dapat dikurangi tanpa merubah output. Atau bisa juga dikatakan bahwa 
+                    optimasi query adalah sebuah prosedur untuk meningkatkan strategi evaluasi dari suatu query untuk membuat evaluasi tersebut 
+                    menjadi lebih efektif. Optimasi query mencakup beberapa teknik seperti transformasi query ke dalam bentuk logika yang sama, 
+                    memilih jalan akses yang optimal dan mengoptimumkan penyimpanan data. Tujuan dari optimasi query adalah menemukan jalan 
+                    akses yang termurah untuk meminimumkan total waktu pada saat proses sebuah query. Untuk mencapai tujuan tersebut, maka 
+                    diperlukan optimizer untuk melakukan analisa query dan untuk melakukan pencarian jalan akses. </p>
+                <br>
 
-          <div class="col-md-4 mb-4"> <!-- Awal Col-4-->
-            <div class="card">
-              <div class="card-body">
-                This is some text within a card body.
+                <h3>Diagram Alir <i>Query</i></h3>
+                <img src="img/basdat1_diagramquery.png" alt="Gambar Diagram Alir Query" style="display: block; margin-left: auto; margin-right: auto;">
+                <br>         
+                  <ol>
+                    <li><i>Scanner</i>, melakukan identifikasi (pengenalan) token-token seperti SQL keywords, attribute, dan relation name. </li>
+                    <li><i>Query Parser</i>, melakukan verifikasi terhadap validitas dari statemen SQL, kemudian menterjemahkan Query kedalam 
+                      struktur internal menggunakan kalkulus relasional.</li>
+                    <li><i>Query Oprimizer</i>, mencari ekspresi terbaik dari beberapa ekspresi aljabar yang berbeda. Kriteria yang digunakan 
+                      adalah "Murahnya Biaya"</li>
+                    <li><i>Code Generator/Interpreter</i>, menerjemahkan Query Plan yang dihasilkan oleh Query Optimizer menjadi Query Code 
+                      untuk kemudian dikirimkan ke Query Processor</li>
+                    <li><i>Query Processor</i>, mengeksekusi Query Code yang didapat dari Code Generator.</li>
+                  </ol>
+
+                <br>
+
+                <h3><i>Cost-Based Query Optimization</i></h3>
+                <p>Biaya (Cost) adalah waktu yang dibutuhkan untuk mendapatkan 
+                  semua jawaban. Hampir semua DBMS menggunakan cost-based optimizer untuk mengoptimalkan query.</p>
+                <p>Tahapan-tahapan pada Cost-Based Query Optimization:</p>
+                <ol>
+                  <li>Parsing</li>
+                  <li>Transformasi</li>
+                  <li>Implementasi</li>
+                  <li>Perencanan pemilihan skenario query berdasarkan estimasi biaya</li>
+                </ol>
+                <br>
+                
+                <h3>Estimasi Biaya <i>Query</i></h3>
+                <p>Strategi yang dipilih dalam evaluasi query tergantung pada estimasi biaya dari masing-masing strategi yang ada. 
+                  Optimizer Query akan membuat informasi statistik yang disimpan dalam katalog DMBS untuk memperkirakan biaya dari sebuah 
+                  rencana query.</p>
+                  <ul>
+                    <li>n<sub>r</sub> = Jumlah record dalam tabel r</li>
+                    <li>b<sub>r</sub> = Jumlah block yang menampung data pada tabel r</li>
+                    <li>s<sub>r</sub> = Ukuran setiap record dari tabel r (dlm Byte)</li>
+                    <li>f<sub>r</sub> = blocking factor/jumlah record yg dapat ditampung oleh 1 blok</li>
+                    <li>V(A,r) = Jumlah nilai unik yang ada pada atribut A di tabel r</li>
+                    <li>SC(A,r) =rata-rata jumlah record yang memenuhi kondisi kesamaan terhadap atribut A</li>
+                  </ul>
+                  <p>Biaya evaluasi query dapat diukur dari banyaknya sumber daya sistem yang digunakan, misl: pengaksesan disk, waktu CPU 
+                    dan waktu komunikasi</p>
+                <br>
+
+                <h3>Evaluasi Ekspresi</h3>
+                <p>Mengevaluasi query dilakukan bagian-perbagian secara berurutan.</p>
+                  <ul>
+                    <li>Materialisasi</li>
+                    <p>Materialization mengevaluasi 1 operasi pada satu waktu, dimulai pada level yang paling rendah kemudian dilanjutkan 
+                      ke atasnya. Cost untuk menulis result pada disk dan membaca kembali cenderung besar. Materialisasi ini menampung hasil 
+                      operasi menggunakan tabel temporer (dimaterialkan) yang kemudian digunakan untuk evaluasi level berikutnya.</p>
+                    <li>Pipeline </li>
+                    <p>Pipelining mengevaluasi banyak operasi secara bersamaan, melewati hasil satu opeasi ke berikutnya. Pipelining jauh 
+                      lebih murah dari pada  materialisasi, karena tidak perlu untuk menyimpan sementara hubungan ke disk. Pipelining mungkin 
+                      tidak selalu bisa digunakan pada sort, hash-join. Agar pipelining menjadi efektif, menggunakan algoritma evaluasi yang
+                      menghasilkan output tupel bahkan sebagai tupel diterima untuk masukan kepada operasi.  Pipeline mengganti tabel temporer 
+                      dengan suatu pipeline operasi (berupa buffer). Penggunaan pipeline akan menghilangkan biaya 
+                      pembacaan dan penulisan tabel-tabel temporer. Pipelines  dapat diekseskusi  dalam dua cara yaitu 
+                      <i>demand driven</i> dan <i>producer driven</i>.
+                      </p>
+                  </ul>
               </div>
             </div>
-          </div><!-- Akhir Col-4 -->
+          </div> <!-- Akhir Col-12 -->
+       
         </div>
     </div>
 <!-- Akhir Content -->
 
-<br>
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      Ahsan, Ahmad Syauqi. tth. <b>Optimasi Query</b>. <a href="https://bit.ly/2Htsce1" target="_blank">https://bit.ly/2Htsce1</a>. <br>
+      Siallagan, Manahan dkk. 2018. <b>Optimasi Query Database Menggunakan Algoritma Genetik</b>. Yogyakarta: Universitas Komputer Indonesia. <br>
+      Unknown. 2015. <b>Rumus Fungsi Query Microsoft Access</b>. <a href="https://bit.ly/366MAMd" target="_blank">https://bit.ly/366MAMd</a>. <br>
+      Unknown. tth. <b>Pemrosesan Query dan Optimasi Query</b>. Slamet SN- Tim Basis Data: <a href="https://bit.ly/3kNVX7P" target="_blank">https://bit.ly/3kNVX7P</a>. <br>
+      Unknown. tth. <b>Query Processing</b>. <a href="https://bit.ly/2Htsce1" target="_blank">https://bit.ly/2Htsce1</a>. <br>
+      Vernandhes, Wanda. 2017. <b>Data Based Management System</b>. Depok: Gunadarma University. 
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
 
 <!-- Awal Footer -->
 <footer class="warna-bg">
@@ -86,8 +163,6 @@
   </div>
 </footer>
 <!-- Akhir Footer -->
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
