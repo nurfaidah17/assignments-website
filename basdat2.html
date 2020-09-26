@@ -48,35 +48,155 @@
 <!-- Awal Content -->
     <div class="container">
         <div class="row">
-          <div class="col-md-8 mb-4"> <!-- Awal Col-8-->
+          
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
             <div class="card">
-              <div class="card-body">
-                <h2>Masih dalam Proses Pengerjaan ... </h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis consequuntur commodi animi 
-                  esse earum minima, laboriosam mollitia! Eum natus assumenda quibusdam esse provident? Unde itaque 
-                  adipisci error voluptates eaque laboriosam.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis consequuntur commodi animi 
-                    esse earum minima, laboriosam mollitia! Eum natus assumenda quibusdam esse provident? Unde itaque 
-                    adipisci error voluptates eaque laboriosam.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis consequuntur commodi animi 
-                    esse earum minima, laboriosam mollitia! Eum natus assumenda quibusdam esse provident? Unde itaque 
-                    adipisci error voluptates eaque laboriosam.</p>
-              </div>
-            </div>
-          </div> <!-- Akhir Col-8 -->
+              <div class="card-body text-justify">
+                <h3>Apa itu <i>Evaluation Plan</i>?</h3>
+                <p>Evaluation Plan (rencana evaluasi) mencakup informasi tentang apa yang akan dilakukan evaluasi (apa yang akan dievaluasi, 
+                  tujuan evaluasi dan pertanyaan evaluasi kunci) dan bagaimana itu akan dilakukan (data apa yang akan dikumpulkan, bagaimana 
+                  dan kapan, bagaimana data akan dianalisis, dan bagaimana serta kapan hasil akan dilaporkan).</p>
+                <p>Sebagian besar sistem database menyediakan cara untuk melihat rencana evaluasi yang dipilih untuk menjalankan kueri tertentu. 
+                  Biasanya paling baik menggunakan GUI yang disediakan dengan sistem database untuk melihat rencana evaluasi. Namun, jika 
+                  Anda menggunakan antarmuka baris perintah, banyak database mendukung variasi dari perintah "explain &ltquery&gt", yang menampilkan 
+                  rencana eksekusi yang dipilih untuk kueri &ltquery&gt yang ditentukan. Sintaks yang tepat bervariasi dengan database yang 
+                  berbeda.</p>
+                <br>
 
-          <div class="col-md-4 mb-4"> <!-- Awal Col-4-->
-            <div class="card">
-              <div class="card-body">
-                This is some text within a card body.
+                <h3>1. MySQL</h3>
+                <p>MySQL menggunakan sintaks explain <query> yang sama dengan PostgreSQL, tetapi outputnya adalah tabel yang isinya tidak 
+                  mudah dipahami. Namun, menjalankan show warnings setelah perintah explain akan menampilkan rencana evaluasi dalam format 
+                  yang lebih dapat dibaca manusia.</p>
+                  <p>Ketika mengeksekusi suatu query, MySQL menyusun rencana apa saja yang akan dilakukan untuk mengeksekusi query tersbut. 
+                    Rencana ini tertuang dalam Query Execution Plan (QEP). Dengan membaca QEP tersebut kita dapat menganalisa efektifitas 
+                    suatu query. QEP ini dapat kita lihat dengan menggunakan statement Explain, misal:
+                    </p>
+                    <img src="img/basdat2-g1.png" alt="Statement Explain" style="display: block; margin-left: auto; margin-right: auto;">
+                  <p>QEP ini menyajikan informasi detail baik untuk query sederhana maupun query yang kompleks yang melibatkan banyak tabel. 
+                    Dengan mempelajari dan memahami setiap bagian dari QEP ini, kita dapat menganalisa bagian query mana yang perlu untuk dioptimasi.</p>
+                <br>
+
+                <h3>2. ProstgreSQL </h3>
+                <p>EXPLAIN menunjukkan rencana eksekusi suatu pernyataan.</p>
+                <img src="img/basdat2-g2.png" alt="Statement Explain" style="display: block; margin-left: auto; margin-right: auto;">
+                <p>Perintah ini menampilkan rencana eksekusi yang dibuat oleh perencana PostgreSQL untuk pernyataan yang disediakan. 
+                  Rencana eksekusi menunjukkan bagaimana tabel yang direferensikan oleh pernyataan akan dipindai - dengan pemindaian sekuensial 
+                  biasa, pemindaian indeks, dll. - dan jika beberapa tabel direferensikan, algoritme gabungan apa yang akan digunakan untuk 
+                  menyatukan baris yang diperlukan dari masing-masing tabel masukan.</p>
+                <p>Bagian paling penting dari tampilan adalah perkiraan biaya eksekusi pernyataan, yang merupakan tebakan perencana berapa 
+                  lama waktu yang dibutuhkan untuk menjalankan pernyataan (diukur dalam unit biaya yang sewenang-wenang, tetapi secara 
+                  konvensional pengambilan halaman disk yang berarti). Ada dua angka yang ditampilkan: biaya awal sebelum baris pertama dapat 
+                  dikembalikan, dan biaya total untuk mengembalikan semua baris. Untuk sebagian besar kueri, biaya total adalah yang 
+                  terpenting, tetapi dalam konteks seperti subkueri di EXISTS, perencana akan memilih biaya permulaan terkecil daripada total 
+                  biaya terkecil (karena pelaksana akan berhenti setelah mendapatkan satu baris). Juga, jika Anda membatasi jumlah baris untuk 
+                  dikembalikan dengan klausa LIMIT, perencana membuat interpolasi yang sesuai antara biaya titik akhir untuk memperkirakan paket 
+                  mana yang benar-benar termurah.</p>
+                <p>Opsi ANALYZE menyebabkan pernyataan benar-benar dieksekusi, tidak hanya direncanakan. Kemudian statistik run time aktual 
+                  ditambahkan ke tampilan, termasuk total waktu berlalu yang dihabiskan dalam setiap node rencana (dalam milidetik) dan jumlah 
+                  total baris yang sebenarnya dikembalikan. Ini berguna untuk melihat apakah perkiraan perencana mendekati kenyataan.</p>
+
+                <br>
+
+                <h3>3. SQL Server</h3>
+                <p>Cara SQL Server memilih  plan terbaik adalah dengan menghitung cost estimation. Ketika optimizer membuat execution plan, 
+                  ia  melakukan parameter sniffing untuk mengetahui nilai-nilai parameternya. Ini bukan masalah; sebenarnya diperlukan untuk 
+                  membuat  plan yang terbaik. Masalah muncul ketika query menggunakan plan yang dibuat sebelumnya yang dioptimalkan untuk 
+                  distribusi data yang berbeda. Dalam kebanyakan kasus database workload bersifat homogen sehingga parameter sniffing tidak 
+                  akan menjadi masalah; tetapi pada sejumlah kecil kasus ini menjadi masalah dan hasilnya bisa dramatis. </p>
+                <p>SQL Server membutuhkan perintah <b>set showplan_text on</b> untuk dieksekusi sebelum mengirimkan kueri; kemudian, saat 
+                  kueri dikirim, alih-alih mengeksekusi kueri, rencana evaluasi ditampilkan.</p>  
+                <p>Pengoptimal Kueri SQL Server adalah pengoptimal berbasis biaya. Ini menganalisis sejumlah rencana eksekusi kandidat untuk 
+                  kueri tertentu, memperkirakan biaya masing-masing rencana ini dan memilih rencana dengan biaya terendah dari pilihan yang 
+                  dipertimbangkan. Memang, karena Pengoptimal Kueri tidak dapat mempertimbangkan setiap rencana yang mungkin untuk setiap 
+                  kueri, ia sebenarnya harus melakukan tindakan penyeimbangan berbasis biaya, dengan mempertimbangkan biaya untuk menemukan 
+                  rencana potensial dan biaya rencana itu sendiri. Tabel berikut menunjukkan pernyataan berbeda yang dapat Anda gunakan 
+                  untuk mendapatkan perkiraan atau rencana eksekusi aktual dalam format teks, grafik, atau XML. Perhatikan bahwa ketika 
+                  Anda menjalankan salah satu pernyataan ini menggunakan klausa ON, ini akan berlaku untuk semua pernyataan berikutnya 
+                  hingga opsi secara manual disetel ke OFF lagi.</p>
+                  <table class="table table-bordered table-hover">
+                    <thead class="text-center">
+                      <tr>
+                        <th></th>
+                        <th>Esimated Execution Plan</th>
+                        <th>Actual Exection Plan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Text Plan</td>
+                        <td>SET SHOWPLAN_TEXT ON <br> SET SHOWPLAN_ALL ON</td>
+                        <td>SET STATISTICS PROFILE ON</td>
+                      </tr>
+                      <tr>
+                        <td>Grapich Plan</td>
+                        <td>Management Studio</td>
+                        <td>Management Studio</td>
+                      </tr>
+                      <tr>
+                        <td>XML Plan</td>
+                        <td>SET SHOWPLAN_XML ON</td>
+                        <td>SET STATISTICS XML ON</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <p>Seperti yang Anda lihat di Tabel 1-1, ada dua perintah untuk mendapatkan perkiraan rencana teks; <b>SETEL SHOWPLAN_TEXT</b>  
+                  dan <b>SET SHOWPLAN_ALL</b>. Kedua pernyataan tersebut menunjukkan perkiraan rencana pelaksanaan, tetapi SET SHOWPLAN_ALL juga 
+                  menunjukkan beberapa informasi tambahan, termasuk perkiraan jumlah baris, perkiraan biaya CPU, perkiraan biaya I / O, 
+                  dan perkiraan biaya operator. Namun, versi terbaru dari Buku Daring, termasuk SQL Server 2008 R2, menunjukkan bahwa semua 
+                  versi teks rencana eksekusi akan ditinggalkan di versi mendatang dari SQL Server.</p>
+                <br>
+
+                <h3>4. Oracle</h3>
+                <P>Rencana evaluasi kueri (Oracle menyebutnya sebagai "rencana eksekusi") adalah program untuk mesin abstrak (juru bahasa) di dalam DBMS. 
+                  Ini dihasilkan oleh pengoptimal kueri. Nama lainnya adalah "rencana akses" (DBMS harus memutuskan bagaimana mengakses baris, misalnya 
+                  apakah akan menggunakan indeks). 
+                  Di kebanyakan sistem, query evaluation plans (QEPs) mirip dengan ekspresi aljabar relasional (sangat bergantung pada sistem).</P>
+                <p>Cara Melihat QEP Oracle:</p>
+                <UL>
+                  <li>Pertama tabel "PLAN_TABLE" dengan kolom yang ditentukan di mana Oracle akan menyimpan informasi tentang QEP</li>
+                  <li>Cara termudah untuk melakukannya adalah dengan menjalankan skrip</li>
+                  <p>$ORACLE_HOME/rdbms/admin/utlxplan.sql</p>
+                  <li>Kemudian masukkan perintah berikut di SQL* Plus:</li>
+                  <p>SET AUTOTRACE ON EXPLAIN</p>
+                  <li>Kemudian Oracle akan menampilkan informasi tentang QEP untuk semua kueri berikut (tidak semua detail, hanya struktur umum).</li>
+                  <p>Jika seseorang keluar dari SQL*Plus, pengaturan AUTOTRACE dilupakan, tetapi PLAN_TABLE masih ada.</p>
+                </UL>
+
+                <p>Proses Evaluaion Plans:</p>
+                <ul>
+                  <li>Jadi rencana evaluasi query adalah pohon dengan operasi yang dilampirkan ke setiap node</li>
+                  <li>Setiap node menghitung relasi yang dikirimkan sebagai input ke node induknya (di atas pohon)</li>
+                  <li>Relasi yang dihitung oleh simpul akar (puncak pohon) dikembalikan ke pengguna sebagai jawaban atas kueri SQL yang diberikan</li>
+                  <li>Daun node mengakses tabel atau indeks untuk menghitung relasinya</li>
+                  <li>Operasi di node lain memproses atau menggabungkan relasi yang mereka dapatkan dari node turunannya</li>
+                
+                <p>Oracle menggunakan <b>explain plan for</b>. Namun, perintah tersebut menyimpan rencana yang dihasilkan dalam tabel yang disebut 
+                  tabel rencana, alih-alih menampilkannya. Query <b>“select * from table (dbms xplan.display);”</b> menampilkan rencana yang disimpan.</p>
+                </ul>
               </div>
             </div>
-          </div><!-- Akhir Col-4 -->
+          </div> <!-- Akhir Col-12 -->
+
         </div>
     </div>
 <!-- Akhir Content -->
 
-<br>
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      Brass, Stevan. 2004. Query Elatuation. Jerman: Universitas Halle. <a href="https://bit.ly/3i4RNGL" target="_blank">https://bit.ly/3i4RNGL</a>. <br>
+      Nevarez, Benjamin. 2011. The SQL Server Query Optimizer. Redgate: <a href="https://bit.ly/3mTNe5S" target="_blank">https://bit.ly/3mTNe5S</a>. <br> 
+      Silberschatz , Abraham, dkk. 2020. Database-System-Concepts-7th-Edition. New York: McGraw-Hill Education. <br>
+      Sudono, Anugerah Sentot. 2018. Cara-cara untuk mengoreksi SQL Server Parameter Sniffing.Blog: <a href="https://bit.ly/3mVUga2">https://bit.ly/3mVUga2</a>. <br>
+      Unknown. 2020. Optimasi Query MySQL dan MariaDB – eBook. Jagowebdev: <a href="https://bit.ly/364UCW4" target="_blank">https://bit.ly/364UCW4</a>. <br>
+      Unknown. tth. Evaluation Plan. Better Evaluation: <a href="https://bit.ly/305Sn12" target="_blank">https://bit.ly/305Sn12</a>. <br>
+      Unknown. tth. Explain. The PostgreSQL Global Development Group: <a href="https://bit.ly/2G7dby2" target="_blank">https://bit.ly/2G7dby2</a>. 
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
 
 <!-- Awal Footer -->
 <footer class="warna-bg">
