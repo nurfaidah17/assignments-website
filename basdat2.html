@@ -71,14 +71,14 @@
                     Rencana ini tertuang dalam Query Execution Plan (QEP). Dengan membaca QEP tersebut kita dapat menganalisa efektifitas 
                     suatu query. QEP ini dapat kita lihat dengan menggunakan statement Explain, misal:
                     </p>
-                    <img src="img/basdat2-g1.png" alt="Statement Explain" style="display: block; margin-left: auto; margin-right: auto;">
+                    <img src="img/basdat2-g1.png" alt="Statement Explain" class="img-responsive" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
                   <p>QEP ini menyajikan informasi detail baik untuk query sederhana maupun query yang kompleks yang melibatkan banyak tabel. 
                     Dengan mempelajari dan memahami setiap bagian dari QEP ini, kita dapat menganalisa bagian query mana yang perlu untuk dioptimasi.</p>
                 <br>
 
                 <h3>2. ProstgreSQL </h3>
                 <p>EXPLAIN menunjukkan rencana eksekusi suatu pernyataan.</p>
-                <img src="img/basdat2-g2.png" alt="Statement Explain" style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="img/basdat2-g2.png" alt="Statement Explain" class="img-responsive" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
                 <p>Perintah ini menampilkan rencana eksekusi yang dibuat oleh perencana PostgreSQL untuk pernyataan yang disediakan. 
                   Rencana eksekusi menunjukkan bagaimana tabel yang direferensikan oleh pernyataan akan dipindai - dengan pemindaian sekuensial 
                   biasa, pemindaian indeks, dll. - dan jika beberapa tabel direferensikan, algoritme gabungan apa yang akan digunakan untuk 
@@ -113,7 +113,7 @@
                   untuk mendapatkan perkiraan atau rencana eksekusi aktual dalam format teks, grafik, atau XML. Perhatikan bahwa ketika 
                   Anda menjalankan salah satu pernyataan ini menggunakan klausa ON, ini akan berlaku untuk semua pernyataan berikutnya 
                   hingga opsi secara manual disetel ke OFF lagi.</p>
-                  <table class="table table-bordered table-hover">
+                  <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
                     <thead class="text-center">
                       <tr>
                         <th></th>
@@ -186,13 +186,13 @@
   <div class="container">
     <h1 class="display-4 text-center">Referensi</h1>
     <p class="lead text-center">
-      Brass, Stevan. 2004. <b>Query Elatuation</b>. Jerman: Universitas Halle. <a href="https://bit.ly/3i4RNGL" target="_blank">https://bit.ly/3i4RNGL</a>. <br>
-      Nevarez, Benjamin. 2011. <b>The SQL Server Query Optimizer</b>. Redgate: <a href="https://bit.ly/3mTNe5S" target="_blank">https://bit.ly/3mTNe5S</a>. <br> 
-      Silberschatz , Abraham, dkk. 2020. <b>Database-System-Concepts-7th-Edition</b>. New York: McGraw-Hill Education. <br>
-      Sudono, Anugerah Sentot. 2018. <b>Cara-cara untuk mengoreksi SQL Server Parameter Sniffing</b>.Blog: <a href="https://bit.ly/3mVUga2">https://bit.ly/3mVUga2</a>. <br>
-      Unknown. 2020. <b>Optimasi Query MySQL dan MariaDB</b>. Jagowebdev: <a href="https://bit.ly/364UCW4" target="_blank">https://bit.ly/364UCW4</a>. <br>
-      Unknown. tth. <b>Evaluation Plan</b>. Better Evaluation: <a href="https://bit.ly/305Sn12" target="_blank">https://bit.ly/305Sn12</a>. <br>
-      Unknown. tth. <b>Explain</b>. The PostgreSQL Global Development Group: <a href="https://bit.ly/2G7dby2" target="_blank">https://bit.ly/2G7dby2</a>. 
+      Brass, Stevan. 2004. Query Elatuation. Jerman: Universitas Halle. <a href="https://bit.ly/3i4RNGL" target="_blank">https://bit.ly/3i4RNGL</a>. <br>
+      Nevarez, Benjamin. 2011. The SQL Server Query Optimizer. Redgate: <a href="https://bit.ly/3mTNe5S" target="_blank">https://bit.ly/3mTNe5S</a>. <br> 
+      Silberschatz , Abraham, dkk. 2020. Database-System-Concepts-7th-Edition. New York: McGraw-Hill Education. <br>
+      Sudono, Anugerah Sentot. 2018. Cara-cara untuk mengoreksi SQL Server Parameter Sniffing.Blog: <a href="https://bit.ly/3mVUga2">https://bit.ly/3mVUga2</a>. <br>
+      Unknown. 2020. Optimasi Query MySQL dan MariaDB – eBook. Jagowebdev: <a href="https://bit.ly/364UCW4" target="_blank">https://bit.ly/364UCW4</a>. <br>
+      Unknown. tth. Evaluation Plan. Better Evaluation: <a href="https://bit.ly/305Sn12" target="_blank">https://bit.ly/305Sn12</a>. <br>
+      Unknown. tth. Explain. The PostgreSQL Global Development Group: <a href="https://bit.ly/2G7dby2" target="_blank">https://bit.ly/2G7dby2</a>. 
     </p>
   </div>
 </div>
