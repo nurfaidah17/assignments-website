@@ -37,7 +37,7 @@
     <section class="jumbotron-bg">
         <div class="jumbotron warna-bg text-white">
             <div class="container">
-                <h1 class="display-4">Transaction</h1>
+                <h1 class="display-4">DATABASE TRANSACTION</h1>
                 <p class="lead"><b>Tugas 4</b> Basis Data II</p>
             </div>
         </div>
@@ -51,16 +51,136 @@
           <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
             <div class="card">
               <div class="card-body text-justify"> 
-                <h3>Apa itu <i>Transaction/i>?</h3>
-                  <p></p>
+                <h3>Apa itu Transaction?</h3>
+                  <p>Transaction atau transaksi pada <i>database</i> merupakan sekumpulan instruksi atau operasi yang menjalankan 
+                    sebuah fungsi logis. </p>
+                  <p>Transaksi database  dibutuhkan karena alasan:</p>
+                  <ol>
+                    <li>Menyediakan unit kerja yang andal dan konsisten, bahkan jika terjadi kegagalan sistem.</li>
+                    <li>Untuk menyediakan isolasi antara program yang mengakses database secara bersamaan.</li>
+                  </ol>
                 <br>
-                
-                <h3>Tujuan <i>Transaction</i></h3>
+    
+                <h3>ACID Properties</h3>
+                <p>ACID properties merupakan syarat-syarat transaksi database yang harus terpenuhi agar pada saat terjadi system crash, 
+                  pemulihan pada transaksi tersebut dapat dilakukan.</p>
+                <p>ACID properties terdiri dari:</p>
+                <ol>
+                  <b><li>Atomicity (Keutuhan)</li></b>
+                  <p>Atomicity menjamin bahwa setiap transaksi diperlakukan sebagai satu "unit" yaitu transaksi dijalankan 
+                    secara keseluruhan atau tidak dijalankan sama sekali. Jika salah satu pernyataan yang merupakan transaksi gagal diselesaikan, 
+                    maka seluruh transaksi gagal dan database tidak berubah.</p>
+                  
+                  <b><li>Consistency (Ketepatan)</li></b>
+                  <p>Consistency menjamin data tetap valid setelah transaksi sukses dijalankan. Lebih tepatnya, semua data yang ditulis ke 
+                    database harus valid sesuai dengan aturan yang telah ditentukan, termasuk batasan, kaskade, dan pemicu.</p>
+                  
+                  <b><li>Isolation (Pemisahan)</li></b>
+                  <p>Isolation memastikan bahwa suatu keadaan transaksi itu bebas, transaksi tidak mempengaruhi transaksi lain. Transaksi 
+                    yang belum selesai tidak dapat menunjukkan hasilnya ke transaksi yang lain sebelum transaksi tersebut commit. </p>
+                  
+                  <b><li>Durability (Daya Tahan)</li></b>
+                  <p>Durability menjamin hasil dari operasi akan tetap setelah transaksi dilakukan (commit), bahkan jika terjadi kegagalan sistem 
+                    (misalnya, listrik padam atau <i>crash</i>). Ini biasanya berarti bahwa transaksi yang diselesaikan (atau pengaruhnya) 
+                    dicatat dalam memori non-volatile.</p>
+                </ol>
                 <br>
 
-                <h3><i>ACID Properties</i></h3>
-                <p></p>
-                
+                <h3>Studi Kasus</h3>
+                <p class="text-center"><b>Masalah: Customer ingin mengalokasikan tempat duduk (<i>seat</i>) di penerbangan pesawat.</b></p>
+                <!-- <p>Customer ingin mengalokasikan tempat duduk (<i>seat</i>) di penerbangan pesawat.</p> -->
+
+                <p>Berikut penerapan fungsi yang mengembalikan status sukses:</p>
+                <pre class="pre-scrollable bg-dark text-white" >
+                  <code>
+        function allocSeat(paxID      integer,
+                           flightID   integer,
+                           seatNum    string)
+                returning  boolean
+        {
+          check whether seat currently occupied       
+          if (already occupied)
+              tell pax seat taken; return !ok
+          else
+              assign pax to seat; return ok
+        }
+                  </code>
+                </pre>
+                <p>Dengan asumsi skema:</p>
+                <pre class="pre-scrollable bg-dark text-white">
+                  <code>
+        Flight(<b>flightID</b>, flightNum, flightTime, ...)    
+        SeatingAlloc(<b>flightID</b>, <b>seatNum</b>, paxID, ...)
+                  </code>
+                </pre>
+
+                <p>Berikut Implementasi PLpgSQL untuk alokasi <i>seat</i>: </p>
+                <pre class="pre-scrollable bg-dark text-white"><code>
+        <b>CREATE</b> or replace function
+            allocSeat(paxID int, fltID int, seat text) returns boolean    
+        as $$
+        declare
+            pid int;
+        begin <div class="text-primary">  
+            select paxID into pid from SeatingAlloc
+            where  flightID = fltID and seatNum = seat; </div> 
+            if (pid is not null) then
+                return false;  
+            else <div class="text-primary">
+                update SeatingAlloc set pax = paxID
+                where  flightID = fltID and seatNum = seat; </div> 
+                <b>commit</b>; 
+                return true;
+            end if;
+        end;
+        $$ langauge plpgsql;
+                  </code>
+                </pre>
+                <br>
+
+                <p><b>Analisis ACID:</b></p>
+                <ol>
+                  <b><li>Atomicity</li></b>
+                  <p>Serangkaian implementasi PLpgSQ di atas harus digabungkan dan dilaksanakan, sehingga apabila sebelum proses booking 
+                    selesai kemudian terjadi kesalahan maka seluruh perubahan transaksi harus dibatalkan dan tidak disimpan ke database. 
+                    Sedangkan apabila transaksi berhasil maka perubahan akan disimpan ke database. </p>
+
+                  <b><li>Consistensy</li></b>
+                  <p>Jumlah <i>seat</i> dengan allocSeat(Cust‘n’, f, 23B) harus tetap sama, tidak berubah sebelum dan sesudah dibooking oleh 
+                    seorang customer, dalam hal ini hanya ada satu customer yang akan berhasil membooking <i>seat</i> tersebut. </p>
+                  <p>Berikut algoritma ketika customer Cust1 mengekeskusi allocSeat(Cust1,f,23B):</p>
+                  <pre class="pre-scrollable bg-dark text-white">
+                    <code>
+        Cust1 sees that seat 23B is available
+        Cust1 allocates seat 23B for themselves
+        If customer Cust2 then executes allocSeat(Cust2,f,23B)    
+        Cust2 sees that seat 23B is already booked
+        allocSeat() returns with failure; no change to DB
+                    </code>
+                  </pre>
+                  <p>Sistem di atas menunjukkan perilaku sesuai kebutuhan (konsisten).</p>
+
+                  <b><li>Isolation</li></b>
+                  <p>Transaksi (proses <i>booking seat</i>) oleh customer yang belum selesai tidak dapat menunjukkan hasilnya ke transaksi 
+                    yang lain sebelum transaksi tersebut <i>commit</i>.</p>
+                  <p>Berikut operasi yang mungkin ketika dua customer mencoba mengalokasikan (Cust‘n’, F, 23B) secara bersamaan: </p>
+                  <pre class="pre-scrollable bg-dark text-white">
+                    <code>
+        Cust1 sees that seat 23B is available
+        Cust2 sees that seat 23B is available 
+        Cust1 allocates seat 23B for themselves     
+        Cust2 allocates seat 23B for themselves
+                    </code>
+                  </pre>
+                  <p>Jika diantara proses transaksi <i>booking</i> Cust1 ada transaksi <i>booking</i> Cust2 yang disisipkan/ yang terjadi, maka akan 
+                    menyebabkan inkonsistensi terhadap database (jumlah kursi yang tersedia). Untuk menghindari hal tersebut, maka 
+                    transaksi dieksekusi secara serial sehingga data tidak dapat diakses secara bersamaan oleh lebih dari satu operasi.</p>
+                  
+                  <b><li>Durability</li></b>
+                  <p>Pada saat eksekusi transaksi selesai dilaksanakan, dan customer yang melakukan transaksi sudah diberitahu bahwa 
+                    “assign pax to seat” atau sukses melakukan booking seat, maka harus dipastikan bahwa tidak ada kesalahan sistem 
+                    yang akan terjadi yang menyebabkan hilangnya data yang berkaitan dengan proses booking tersebut.</p>
+                </ol>
               </div>
             </div>
           </div> <!-- Akhir Col-12 -->
@@ -74,7 +194,14 @@
   <div class="container">
     <h1 class="display-4 text-center">Referensi</h1>
     <p class="lead text-center">
-      Silberschatz, Abraham, dkk. 2020. <b>Database System Concepts</b>, Seventh Edition. New York: McGraw-Hill Education. <br>
+      Joseph, Ardy Christianto. 2016. <b>Apkikasi Pengolahan Data Transaksi Bengkel Motor dengan Menerapkan Protokol Two Phase Locking</b>. Yogyakarta: Universitas Sanata Dharma. <br> 
+      Masyarakat Digital Gotong Royong (MDGR). 2008. <b>Pengantar Sistem Operasi Komputer: Jilid Pertama</b>. <a href="https://bit.ly/3lPtW0c" target="_blank">https://bit.ly/3lPtW0c</a>. <br>
+      Rifai, Muhammad. 2010. <b>Database Transaction</b>. Bandung: <a href="https://bit.ly/3k6B7AI" target="_blank">https://bit.ly/3k6B7AI</a>. <br>
+      Silberschatz, Abraham, dkk. 2020. <b>Database System Concepts, Seventh Edition</b>. New York: McGraw-Hill Education. <br>
+      Sinaga, D. tth. <b>Manajemen Transaksi</b>. <a href="https://bit.ly/2H5l1Zl" target="_blank">https://bit.ly/2H5l1Zl</a>. <br>
+      Tech School. 2020. <b>A clean Way to Implement Database Transaction in Golang</b>. DEV Community: <a href="https://bit.ly/2IzmF6a" target="_blank">https://bit.ly/2IzmF6a</a>. <br>
+      Unknown. 2020. <b>ACID</b>. Wikipedia: <a href="https://bit.ly/341fZWY" target="_blank">https://bit.ly/341fZWY</a>. <br>
+      Unknown. 2016. <b>Transaction Processing</b>. Sydney: Universitas New South Wales. 
     </p>
   </div>
 </div>
