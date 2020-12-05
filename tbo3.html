@@ -58,9 +58,9 @@
                   <p>Langkah 4: Di DFA, final state adalah semua state bagian yang berisi F (final state NFA)</p>
                 
                 <h3>Contoh</h3>
-                  <p>Convert the given NFA to DFA.</p>
+                  <p>Konversi NFA berikut menjadi DFA. </p>
                   <img src="img/tbo3-nfa.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"><br>
-                  <p><b>Solution:</b> For the given transition diagram we will first construct the transition table.</p>
+                  <p>Tabel transisi:</p>
                   <table class="table table-bordered table-striped table-responsive{-sm|-md|-lg|-xl}">
                     <thead class="text-center">
                       <tr>
@@ -90,29 +90,20 @@
 
                   <p>Sekarang kita akan mendapatkan transisi δ' untuk status q<sub>0</sub>.</p>
                     <div class="card card-header border-light mb-3">
-                      <table>
-                        <tbody>
-                          <tr>
-                            <td>δ'([q<sub>0</sub>], a) = [q<sub>0</sub>, q<sub>1</sub>]</td>
-                            <td>(<b class="text-info">new</b> state generated)</td>
-                          </tr>
-                          <tr>
-                            <td>δ'([q<sub>0</sub>], b) = [q<sub>0</sub>]</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <p>δ'([q<sub>0</sub>], <prev class="text-danger">a</prev>) = [q<sub>0</sub>, q<sub>1</sub>] &emsp;&emsp; (<b class="text-info">new</b> state generated)</p>
+                      <p>δ'([q<sub>0</sub>], <prev class="text-danger">b</prev>) = [q<sub>0</sub>]</p>
                     </div>
-
+                    
                   <p>Transisi δ' untuk status q<sub>1</sub> diperoleh sebagai:</p>
                     <div class="card card-header border-light mb-3">
-                      <p>δ'([q<sub>1</sub>], a) = [-]</p>
-                      <p>δ'([q<sub>1</sub>], b) = [q<sub>2</sub>]</p>
+                      <p>δ'([q<sub>1</sub>], <prev class="text-danger">a</prev>) = [-]</p>
+                      <p>δ'([q<sub>1</sub>], <prev class="text-danger">b</prev>) = [q<sub>2</sub>]</p>
                     </div>
 
                   <p>Transisi δ' untuk status q<sub>2</sub> diperoleh sebagai:</p>
                     <div class="card card-header border-light mb-3">
-                      <p>δ'([q<sub>2</sub>], a) = [-]</p>
-                      <p>δ'([q<sub>2</sub>], b) = [-]</p>
+                      <p>δ'([q<sub>2</sub>], <prev class="text-danger">a</prev>) = [-]</p>
+                      <p>δ'([q<sub>2</sub>], <prev class="text-danger">b</prev>) = [-]</p>
                     </div>
                     
                   <p>Sekarang kita akan mendapatkan transisi δ' pada [q<sub>0</sub>, q<sub>1</sub>].</p>
@@ -120,8 +111,8 @@
                       <table>
                         <tbody>
                           <tr> <!-- masukan a -->
-                            <td>δ'(q<sub>0</sub>, q<sub>1</sub>], a)</td>
-                            <td>= δ(q<sub>0</sub>, a) ∪ δ(q<sub>1</sub>, a)</td>
+                            <td>δ'(q<sub>0</sub>, q<sub>1</sub>], <prev class="text-danger">a</prev>)</td>
+                            <td>= δ(q<sub>0</sub>, <prev class="text-danger">a</prev>) ∪ δ(q<sub>1</sub>, <prev class="text-danger">a</prev>)</td>
                           </tr>
                           <tr>
                             <td></td>
@@ -132,8 +123,8 @@
                             <td>= [q<sub>0</sub>, q<sub>1</sub>]</td>
                           </tr>
                           <tr> <!-- masukan b -->
-                            <td>δ'(q<sub>0</sub>, q<sub>1</sub>], b)</td>
-                            <td>= δ(q<sub>0</sub>, b) ∪ δ(q<sub>1</sub>, b)</td>
+                            <td>δ'(q<sub>0</sub>, q<sub>1</sub>], <prev class="text-danger">b</prev>)</td>
+                            <td>= δ(q<sub>0</sub>, <prev class="text-danger">b</prev>) ∪ δ(q<sub>1</sub>, <prev class="text-danger">b</prev>)</td>
                           </tr>
                           <tr>
                             <td></td>
@@ -141,8 +132,7 @@
                           </tr>
                           <tr>
                             <td></td>
-                            <td>= [q<sub>0</sub>, q<sub>2</sub>]</td>
-                            <td>(<b class="text-info">new</b> state generated)</td>
+                            <td>= [q<sub>0</sub>, q<sub>2</sub>] &emsp;&emsp;&emsp;&emsp;(<b class="text-info">new</b> state generated)</td>
                           </tr>
                         </tbody> 
                       </table> 
@@ -153,8 +143,8 @@
                       <table>
                         <tbody>
                           <tr> <!-- masukan a -->
-                            <td>δ'(q<sub>0</sub>, q<sub>2</sub>], a)</td>
-                            <td>= δ(q<sub>0</sub>, a) ∪ δ(q<sub>2</sub>, a)</td>
+                            <td>δ'(q<sub>0</sub>, q<sub>2</sub>], <prev class="text-danger">a</prev>)</td>
+                            <td>= δ(q<sub>0</sub>, <prev class="text-danger">a</prev>) ∪ δ(q<sub>2</sub>, <prev class="text-danger">a</prev>)</td>
                           </tr>
                           <tr>
                             <td></td>
@@ -165,8 +155,8 @@
                             <td>= [q<sub>0</sub>, q<sub>1</sub>]</td>
                           </tr>
                           <tr> <!-- masukan b -->
-                            <td>δ'(q<sub>0</sub>, q<sub>2</sub>], b)</td>
-                            <td>= δ(q<sub>0</sub>, b) ∪ δ(q<sub>2</sub>, b)</td>
+                            <td>δ'(q<sub>0</sub>, q<sub>2</sub>], <prev class="text-danger">b</prev>)</td>
+                            <td>= δ(q<sub>0</sub>, <prev class="text-danger">b</prev>) ∪ δ(q<sub>2</sub>, <prev class="text-danger">b</prev>)</td>
                           </tr>
                           <tr>
                             <td></td>
@@ -175,11 +165,12 @@
                           <tr>
                             <td></td>
                             <td>= [q<sub>0</sub>]</td>
+                            <td class="text-light">000 00000 000000000</td>
                           </tr>
                         </tbody> 
                       </table> 
                     </div>
-
+                    
                   <p>Keadaan [q<sub>0</sub>, q<sub>2</sub>] juga merupakan keadaan akhir karena berisi keadaan akhir q<sub>2</sub>. 
                     Tabel transisi untuk DFA yang dibangun adalah:</p>
                     <table class="table table-bordered table-striped table-responsive{-sm|-md|-lg|-xl}">
