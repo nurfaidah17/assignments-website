@@ -96,32 +96,32 @@
                         </pre>
                       </div>
                       <p>Pada dasarnya menggunakan sesuatu yang disebut "<i>positive lookaheads</i>" dan merupakan bagian dari ekspresi yang 
-                        akan dicari mesin di dalam teks, di mana pun mereka berada. Segala sesuatu di dalam (? = ...) adalah bagian dari ekspresi 
-                        yang kami pedulikan.</p>
+                        akan dicari mesin di dalam teks, di mana pun mereka berada. Segala sesuatu di dalam <span class="badge-light">(? = ...)</span> 
+                        adalah bagian dari ekspresi yang kami pedulikan.</p>
                         <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
                           <tbody>
                             <tr>
-                              <td><pre>(? =. * [az])</pre></td>
+                              <td><pre class="badge-light">(? =. * [az])</pre></td>
                               <td>akan cocok dengan semua karakter yang diikuti oleh huruf kecil</td>
                             </tr>
                             <tr>
-                              <td><pre>(? =. * [AZ])</pre></td>
+                              <td><pre class="badge-light">(? =. * [AZ])</pre></td>
                               <td>akan cocok jika karakter berikut adalah huruf kapital</td>
                             </tr>
                             <tr>
-                              <td><pre>(? =. * \ d)</pre></td>
+                              <td><pre class="badge-light">(? =. * \ d)</pre></td>
                               <td>akan cocok dengan apa pun yang diikuti dengan digit (angka)</td>
                             </tr>
                             <tr>
-                              <td><pre>(? =. * \ W)</pre></td>
+                              <td><pre class="badge-light">(? =. * \ W)</pre></td>
                               <td>cocok dengan semua karakter (selain baris baru) yang diikuti dengan simbol</td>
                             </tr>
                             <tr>
-                              <td><pre>. {8,}</pre></td>
+                              <td><pre class="badge-light">. {8,}</pre></td>
                               <td>pastikan panjang kecocokan setidaknya 8 karakter (karakter apa pun ditandai titik di sana)</td>
                             </tr>
                             <tr>
-                              <td><pre>^ dan $</pre></td>
+                              <td><span class="badge-light">^</span> dan <span class="badge-light">$</span></td>
                               <td>pastikan kecocokan dimulai di awal kata (berkat tanda sisipan di awal ekspresi) dan diakhiri dengan kata (berkat tanda dolar). 
                                 Pada dasarnya hanya kata yang cocok yang diperbolehkan. Kecocokan parsial tidak dipertimbangkan.</td>
                             </tr>
@@ -161,17 +161,17 @@
                         <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
                           <tbody>
                             <tr>
-                              <td><pre>^ [a -zA-Z0-9.! # $% & '* + / =? ^ _ `{|} ~ -] +</pre></td>
+                              <td><pre class="badge-light">^ [a -zA-Z0-9.! # $% & '* + / =? ^ _ `{|} ~ -] +</pre></td>
                               <td>Memeriksa apakah nama pengguna valid, ini hanya memeriksa bahwa semua karakter yang valid sedang digunakan dan bahwa setidaknya 
                                 satu dari mereka telah ditambahkan (itulah arti “<span class="badge-light">+</span>” di akhir)</td>
                             </tr>
                             <tr>
-                              <td><pre>@ [a-zA-Z0 -9 -] +</pre></td>
+                              <td><span class="badge-light">@ [a-zA-Z0 -9 -] +</span></td>
                               <td>Memeriksa karakter <span class="badge-light">@</span> dan nama host, dimana nama host harus alfanumerik dan memiliki setidaknya 
                                 satu karakter</td>
                             </tr>
                             <tr>
-                              <td><pre>(?:\.[a-zA-Z0-9-]+)*$/</pre></td>
+                              <td><span class="badge-light">(?:\.[a-zA-Z0-9-]+)*$/</span></td>
                               <td>Bagian ini bersifat opsional ditandai dengan <span class="badge-light">*</span> di akhir, menangani pemeriksaan TLD (Top Level Domain) 
                                 atau pada dasarnya ekstensi nama domain. Itu berarti 0 atau lebih instance dari grup ini (grup tersebut dipisahkan oleh tanda kurung) 
                                 diperlukan (jadi .com akan cocok, begitu juga .co.uk).</td>
