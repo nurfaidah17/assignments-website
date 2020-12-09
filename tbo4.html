@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      ol li {
+          font-weight:bold;
+      }
+      li > p {
+          font-weight:normal;
+      }
+    </style> 
+
+    <title>Teori Bahasa dan Otomata | Aplikasi Pemanfaatan Regular Expression (Regex)</title>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-light">
+                <a class="navbar-brand" href="#">
+                  <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+                </a>              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">APLIKASI PEMANFAATAN REGULAR EXPRESSION (REGEX)</h1>
+                <p class="lead"><b>Teori Bahasa dan Otomata</b></p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify"> 
+                <h3>Apa itu Regular Expression?</h3>
+                  <p><i>Regular Expression</i> (Regex) merupakan sebuah teks (<i>string</i>) yang mendefinisikan sebuah pola pencarian 
+                    sehingga dapat membantu kita untuk melakukan <i>matching</i> (pencocokan), <i>locate</i> (pencarian), 
+                    dan manipulasi teks.</p>
+                
+                <h3>Aplikasi Pemanfaatan Regular Expression</h3>
+                  <ol>
+                    <li>Pencocokan Kata Sandi</li>
+                      <p>Terkadang kita melihat pesan saat mencoba membuat akun di suatu situs yang mengatakan: "<i>Kata 
+                        sandi Anda harus memiliki setidaknya 8 karakter, setidaknya huruf besar, huruf kecil, angka, dan 
+                        mungkin sebuah simbol sehingga Anda memastikan Anda tidak akan pernah mengingatnya di masa mendatang</i>".</p>
+                      <p>Maksud kalimat di atas adalah pola yang perlu Anda ikuti untuk memberikan kata sandi yang valid. 
+                        Anda dapat menggunakan Ekspresi Reguler berikut:</p>
+                      <div class="card card-header border-light mb-3">/^(?=.*[az])(?=.*[AZ])(?=.*\d)(?=.*\W).{8, } $ / g</div>
+                      <p>Berikut cuplikan cepat untuk Anda uji:</p>
+                      <div class="card card-header border-light mb-3">
+                        <pre>
+    let re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/g
+
+    let passwords = ["Fernando", "f3rn4", "F3rnand0!", "fernando123!"]
+
+    passwords.forEach( p => {
+        let matches = p.match(re)
+        if(!matches) console.log(p, "INVALID PASSWORD")
+        else console.log(p, "is a valid password!")
+    })
+
+    /*
+    Fernando INVALID PASSWORD
+    f3rn4 INVALID PASSWORD
+    F3rnand0! is a valid password!
+    fernando123! INVALID PASSWORD
+    */
+                        </pre>
+                      </div>
+                      <p>Pada dasarnya menggunakan sesuatu yang disebut "<i>positive lookaheads</i>" dan merupakan bagian dari ekspresi yang 
+                        akan dicari mesin di dalam teks, di mana pun mereka berada. Segala sesuatu di dalam (? = ...) adalah bagian dari ekspresi 
+                        yang kami pedulikan.</p>
+                        <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
+                          <tbody>
+                            <tr>
+                              <td><pre>(? =. * [az])</pre></td>
+                              <td>akan cocok dengan semua karakter yang diikuti oleh huruf kecil</td>
+                            </tr>
+                            <tr>
+                              <td><pre>(? =. * [AZ])</pre></td>
+                              <td>akan cocok jika karakter berikut adalah huruf kapital</td>
+                            </tr>
+                            <tr>
+                              <td><pre>(? =. * \ d)</pre></td>
+                              <td>akan cocok dengan apa pun yang diikuti dengan digit (angka)</td>
+                            </tr>
+                            <tr>
+                              <td><pre>(? =. * \ W)</pre></td>
+                              <td>cocok dengan semua karakter (selain baris baru) yang diikuti dengan simbol</td>
+                            </tr>
+                            <tr>
+                              <td><pre>. {8,}</pre></td>
+                              <td>pastikan panjang kecocokan setidaknya 8 karakter (karakter apa pun ditandai titik di sana)</td>
+                            </tr>
+                            <tr>
+                              <td><pre>^ dan $</pre></td>
+                              <td>pastikan kecocokan dimulai di awal kata (berkat tanda sisipan di awal ekspresi) dan diakhiri dengan kata (berkat tanda dolar). 
+                                Pada dasarnya hanya kata yang cocok yang diperbolehkan. Kecocokan parsial tidak dipertimbangkan.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      <p>Jika semua kondisi di atas terpenuhi, maka kecocokan dikembalikan, jika tidak maka tidak akan menjadi kata sandi yang valid.</p>
+
+                    <li>Pencarian File dalam Kode</li>
+                      <p>Pola regex dimasukan dalam kata kunci, lalu dicocokan dengan database atau teks. Contohnya pada aplikasi Visual Studio Code 
+                        terdapat mode pencarian dengan regex. Di sana kita bisa memasukan pola regex. Misal saya ingin mencari di mana saja penulisan nama file js dalam kode.
+                        </p>
+                      <img src="img/tbo4-pencarian.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <br>
+
+                    <li>Pencarian dan penggantian biasa</li>
+                      <p>Kita dapat melihat beberapa kesalahan Optical Character Recognition (OCR), di mana perangkat lunak transkripsi otomatis Internet Archive 
+                        lah membuat kesalahan, meskipun sebagian besar terlihat seperti transkripsi yang bagus. Ada dua tempat di mana OCR telah salah memasukkan 
+                        tanda kutip ganda ke dalam file ini, dalam kedua kasus dengan meletakkannya di antara koma setelah bulan dan tahun empat digit, 
+                        seperti berikut:</p>
+                      <div class="card card-header border-light mb-3">December, " 1907.</div>
+                      <p>Kita dapat menemukannya dengan melakukan pencarian (<span class="badge-light text-danger">Edit → Find</span> dengan pintasan 
+                        <span class="badge-light text-danger">Ctrl+F</span> atau <span class="badge-light text-danger">Cmd+F</span> di Mac) untuk 
+                        tanda kutip ganda, dan konfirmasikan bahwa ini adalah dua contoh tanda kutip dalam file. Dalam hal ini kita dapat menghapusnya. Daripada 
+                        melakukannya dengan tangan, hanya untuk latihan mencoba menggunakan LibreOffice menemukan-dan-mengganti fungsi 
+                        (<span class="badge-light text-danger">Ctrl+H</span> atau <span class="badge-light text-danger">Cmd+Alt+F</span> pada Mac).</p>
+                      <p><i>Ganti <span class="badge-light text-danger">"</span> dengan tidak ada apa-apa.</i></p>
+                      <img src="img/tbo4-pencarian-dan-penggantian-biasa.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <br>
+
+                    <li>Pemeriksaan Format Email</li>
+                      <p>Ketika ada pesan "Format Email Tidak Valid" di suatu formulir pendaftaran, maka pada saat itu elemen <span class="badge-light">input</span> 
+                        jenis "email" sudah melakukan validasi. Anda dapat menggunakan Ekspresi Reguler untuk memvalidasi format ini dalam satu baris kode, 
+                        dari pada memiliki beberapa pernyataan <span class="badge-light">IF</span> yang berbeda.</p>
+                      <p>Berikut Ekspresi Reguler untuk memeriksa alamat email:</p>
+                      <div class="card card-header border-light mb-3">/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA -Z0-9 -] + (?: \. [A-zA-Z0-9 -] +) * $ /</div>
+                      <p>Anda dapat mengidentifikasi ketiga bagian format yang diharapkan pada alamat email:</p>
+                        <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
+                          <tbody>
+                            <tr>
+                              <td><pre>^ [a -zA-Z0-9.! # $% & '* + / =? ^ _ `{|} ~ -] +</pre></td>
+                              <td>Memeriksa apakah nama pengguna valid, ini hanya memeriksa bahwa semua karakter yang valid sedang digunakan dan bahwa setidaknya 
+                                satu dari mereka telah ditambahkan (itulah arti “<span class="badge-light">+</span>” di akhir)</td>
+                            </tr>
+                            <tr>
+                              <td><pre>@ [a-zA-Z0 -9 -] +</pre></td>
+                              <td>Memeriksa karakter <span class="badge-light">@</span> dan nama host, dimana nama host harus alfanumerik dan memiliki setidaknya 
+                                satu karakter</td>
+                            </tr>
+                            <tr>
+                              <td><pre>(?:\.[a-zA-Z0-9-]+)*$/</pre></td>
+                              <td>Bagian ini bersifat opsional ditandai dengan <span class="badge-light">*</span> di akhir, menangani pemeriksaan TLD (Top Level Domain) 
+                                atau pada dasarnya ekstensi nama domain. Itu berarti 0 atau lebih instance dari grup ini (grup tersebut dipisahkan oleh tanda kurung) 
+                                diperlukan (jadi .com akan cocok, begitu juga .co.uk).</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      <p>Berikut cuplikan cepat untuk Anda uji:</p>
+                      <div class="card card-header border-light mb-3">
+                        <pre>
+    let emailRE = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+    let emails = ["fernando", "fernadno@", "fernando@test", "fernando@test.com", "valid_email123@host2.com", "a@1.com"]
+                          
+    emails.forEach( p => {
+        let matches = p.match(emailRE)
+        if(!matches) console.log(p, "INVALID EMAIL")
+        else console.log(p, "is a valid email!")
+    })
+                          
+    /*
+    fernando INVALID EMAIL
+    fernadno@ INVALID EMAIL
+    fernando@test is a valid email!
+    fernando@test.com is a valid email!
+    valid_email123@host2.com is a valid email!
+    a@1.com is a valid email!
+    */
+                        </pre>
+                      </div>
+                    <br>
+
+                    <li>Bekerja dengan fitur Tanggal-Waktu</li>
+                      <p>Sebagian besar data dunia nyata memiliki semacam kolom Tanggal atau Waktu yang terkait dengannya. Kolom seperti itu membawa 
+                        informasi yang berguna untuk model, tetapi karena Tanggal dan Waktu memiliki beberapa format yang tersedia, menjadi sulit 
+                        untuk bekerja dengan data tersebut.</p>
+                      <img src="img/tbo4-bekerja-dengan-fitur-Tanggal-Waktu1.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      <br>
+                      
+                      <p>Misalkan Anda memiliki nilai Date-Time seperti ini:</p>
+                      <div class="card card-header border-light mb-3">date = "2018-03-14 06:08:18"</div>
+                      <p>Mari kita ekstrak "Tahun" dari tanggal. Kita cukup menggunakan regex untuk menemukan pola di mana 4 digit muncul bersamaan:</p>
+                      <div class="card card-header border-light mb-3">
+                        import <br>
+                        re.findall (r "\ d {4}", date)
+                      </div>
+                      <p>Kode di atas akan langsung memberi Anda tahun dari tanggal. Demikian pula, Anda dapat mengekstrak informasi bulan dan 
+                        hari sekaligus.</p>
+                      <div class="card card-header border-light mb-3">
+                        import re <br>
+                        re.findall(r "(\ d {4}) - (\ d {2}) - (\ d {2})", date)
+                      </div>
+                      <img src="img/tbo4-bekerja-dengan-fitur-Tanggal-Waktu2.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      <br>
+
+                      <p>Anda dapat melakukan hal yang sama untuk mengekstrak info waktu seperti jam, menit dan detik. Kemudian bagaimana jika Anda memiliki tanggal seperti format berikut?</p>
+                      <div class="card card-header border-light mb-3">12th September 2019</div>
+                      <p>Anda hanya perlu memperbarui kode Regex di atas. Dalam hal ini, alih-alih memiliki semua angka dalam format tanggal, kami 
+                        sekarang memiliki beberapa teks di antaranya. Kami juga memiliki beberapa spasi ekstra yang dapat dicocokkan menggunakan 
+                        <span class="badge-light">operator \s</span> dan cara untuk menangkap digitnya akan sama seperti contoh sebelumnya. </p>
+                        <img src="img/tbo4-bekerja-dengan-fitur-Tanggal-Waktu3.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      
+                      <p>Anda juga dapat membuat Regex untuk berbagai format Date-Time dan setelah regex Anda siap, Anda dapat menjalankan kode menggunakan 
+                        loop atau menerapkan fungsi dalam panda di atas kolom kumpulan data Anda.</p>
+                  </ol>
+
+                  
+              </div>
+            </div>
+          </div> <!-- Akhir Col-12 -->
+       
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      Doglio, Fernando. 2019. <b>4 Practical Use Cases for Regular Expressions</b>. Bits and Pieces: <a href="https://bit.ly/2VViZiG" target="_blank">https://bit.ly/2VViZiG</a>. <br>
+      Knox, Doug. 2013. <b>Understanding Regular Expressions</b>. The Programming Historian: <a href="https://bit.ly/37RNjQC" target="_blank">https://bit.ly/37RNjQC</a>. <br>
+      Muhardian, Ahmad. 2020. <b>Apa itu Regex? Dan Apa Manfaatnya dalam Pemrograman?</b>. Petani Kode: <a href="https://bit.ly/37xJosg" target="_blank">https://bit.ly/37xJosg</a>. <br>
+      Rizki, Mohd Sanad Zaki. 2010. <b>4 Applications of Regular Expressions that every Data Scientist should know (with Python code)!</b>. Analytics Vidhya: <a href="https://bit.ly/3qzUSUV" target="_blank">https://bit.ly/3qzUSUV</a>. 
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2020 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
