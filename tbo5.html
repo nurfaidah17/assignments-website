@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      ol li {
+          font-weight:bold;
+      }
+      ul li {
+          font-weight:normal;
+      }
+      li > p {
+          font-weight:normal;
+      }
+    </style> 
+
+    <title>Teori Bahasa dan Otomata | Aplikasi Pemanfaatan Context-Free Grammar (CFG)</title>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-light">
+                <a class="navbar-brand" href="#">
+                  <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+                </a>              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">APLIKASI PEMANFAATAN CONTEXT-FREE GRAMMAR (CFG)</h1>
+                <p class="lead"><b>Teori Bahasa dan Otomata</b></p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify"> 
+                <h3>Apa itu Context-Free Grammar?</h3>
+                  <p>Context-Free Grammar (CFG) atau tata bahasa bebas konteks adalah tata bahasa formal yang digunakan untuk menghasilkan 
+                    semua kemungkinan pola string dalam bahasa formal tertentu.</p>
+                  <p>CFG G dapat didefinisikan oleh empat tupel sebagai:</p>
+                  <div class="card card-header border-light mb-3"><pre><span class="text-danger">G</span> = (V, T, P, S)</pre></div>
+                  <p>Dimana,</p>
+                  <ul>
+                    <li><span class="badge-light">G</span> adalah tata bahasanya, yang terdiri dari sekumpulan aturan produksi. Ini digunakan untuk 
+                      menghasilkan string bahasa</li>
+                    <li><span class="badge-light">T</span> adalah himpunan terakhir dari simbol terminal, dilambangkan dengan huruf kecil</li>
+                    <li><span class="badge-light">V</span> adalah himpunan terakhir dari simbol non-terminal, dilambangkan dengan huruf kapital</li>
+                    <li><span class="badge-light">P</span> adalah seperangkat aturan produksi, yang digunakan untuk mengganti simbol non-terminal 
+                      (di sisi kiri produksi) dalam string dengan simbol terminal atau non-terminal lain (di sisi kanan produksi)</li>
+                    <li><span class="badge-light">S</span> adalah simbol awal yang digunakan untuk menurunkan string. Kita dapat menurunkan string 
+                      dengan berulang kali mengganti non-terminal di sisi kanan produksi sampai semua non-terminal telah diganti dengan simbol terminal</li>
+                  </ul>
+                <br>
+
+                <h3>Aplikasi Pemanfaatan Context-Free Grammar</h3>
+                  <ol>
+                    <li>CFG for Requirements</li>
+                      <p>Kami menggunakan teori bahasa formal untuk mewakili semantik dari konstruksi tata bahasa Inggris. Dalam mengembangkan tata bahasa, 
+                        kekuatan ekspresif bahasa perlu diseimbangkan dengan kemampuan pembuktian. Bahasa ini dirancang untuk menerapkan praktik terbaik 
+                        teknik persyaratan. Dengan demikian, pembatasan ditempatkan pada konstruksi tata bahasa yang diizinkan. Batasannya adalah 
+                        menghilangkan kata ganti dari kosakata. Diakui bahwa penggunaan kata ganti memperkenalkan ambiguitas ke dalam persyaratan dan harus 
+                        dihambat. Batasan lain adalah fokus pada suara aktif. Menggunakan persyaratan yang tertulis dalam suara aktif memungkinkan 
+                        identifikasi hubungan yang ditangkap dalam persyaratan.</p>
+                      <p>Tata bahasa juga perlu diterapkan pada persyaratan tertulis manual sebelumnya. Tata bahasanya harus dirancang untuk mengkompensasi 
+                        kesalahan kecil yang dibuat dalam persyaratan tertulis. Kumpulan dokumen persyaratan diperiksa dan diurai untuk menentukan penerapan 
+                        tata bahasa. Tata bahasanya kemudian diadaptasi untuk memperluas cakupan untuk memasukkan pola persyaratan umum. Hasil pada tata 
+                        bahasa adalah beberapa struktur untuk semantik serupa untuk menangkap variasi dalam gaya penulisan. Tata bahasanya tidak disesuaikan 
+                        untuk persyaratan yang dianggap sangat buruk, karena akan berdampak pada penurunan kemampuan tata bahasa saat mengevaluasi 
+                        persyaratan yang baik.</p>
+                      <p>Berikut sebuah contoh dapat menjelaskan penggunaan tata bahasa dengan lebih baik yang diambil dari spesifikasi komunikasi. 
+                        Pertimbangkan persyaratannya:</p>
+                      <p>"Organizational Message Traffic shall be transferred with no greater than 1 in 10<sup>3</sup> BER" </p> 
+                        <p>Tata bahasa mengidentifikasi persyaratan yang berisi klausa independen diikuti dengan klausa relatif yang membatasi. 
+                          Klausul independen, "Organizational Message Traffic shall be transferred", mengidentifikasi:</p>
+                      <ul>
+                        <li>Subjek sebagai "Organizational Message Traffic";</li>
+                        <li>Auxiliary Verb sebagai “shall”;</li>
+                        <li>Verb sebagai "be";</li>
+                        <li>Target sebagai "transferred".</li>
+                      </ul> <br>
+                      <p>Klausul relatif restriktif berisi kriteria penerimaan persyaratan. Klausul ini mengidentifikasi:</p>
+                      <ul>
+                        <li>Preposisi sebagai "with";</li>
+                        <li>Indikator Kriteria sebagai "no greater than";</li>
+                        <li>Nilai Angka sebagai "1 dalam 10<sup>3</sup> ";</li>
+                        <li>Nilai Unit sebagai "BER".</li>
+                      </ul> <br>
+                      <p>Dengan demikian, komponen penyusun persyaratan telah diekstraksi untuk pemeriksaan individu. Dengan persyaratan terurai kami, 
+                        kami dapat membandingkan persyaratan dengan konvensi penulisan yang berbeda dengan lebih baik. Misalnya kita bisa menyamakan 
+                        "less than" dengan "no greater than" atau "10<sup>3</sup>" dengan "1000". Tata bahasanya dapat diadaptasi untuk mencerminkan praktik 
+                        perusahaan dengan cara ini. Jadi kami memiliki mekanisme untuk membandingkan secara semantik persyaratan yang mengimbangi gaya penulis. 
+                        Ini penting untuk penerapan penalaran berbasis kasus.</p>
+                      <img src="img/tbo5-cfg-for-requirements.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      <p>Pada gambar di atas merangkum tata bahasa dalam Backus Naur Form ke tingkat intuitif. TC Clause adalah Klausul Bersyarat Temporal.</p>
+                      <br>
+
+                    <li>CFG for Arithmetic Expressions</li>
+                      <p>Contoh tata bahasa yang menghasilkan string yang mewakili ekspresi aritmatika dengan empat operator 
+                        <span class="badge-light text-danger">+, -, *, /,</span> dan <span class="badge-light text-danger">numbers</span> sebagai operan adalah:</p>
+                      <ul>
+                        <li>expr --> number</li>
+                        <li>expr --> (expr)</li>
+                        <li>expr --> expr + expr</li>
+                        <li>expr --> expr - expr</li>
+                        <li>expr --> expr * expr</li>
+                        <li>expr --> expr / expr</li>
+                      </ul> <br>
+                      <p>Satu-satunya simbol nonterminal dalam tata bahasa ini adalah <span class="badge-light text-danger">expr</span>, yang juga merupakan simbol 
+                        awal. Simbol terminalnya adalah <span class="badge-light text-danger">{+, -, *, /, (,), number}</span> (Kami akan menafsirkan "number" 
+                        untuk mewakili nomor yang valid).</p>
+                      <ul>
+                        <li>Aturan pertama (atau produksi) menyatakan bahwa sebuah ekspresi dapat ditulis ulang sebagai (atau diganti dengan) angka. 
+                          Dengan kata lain, angka adalah ekspresi yang valid.</li>
+                        <li>Aturan kedua mengatakan bahwa <span class="badge-light text-danger">expr</span> yang diapit tanda kurung juga merupakan 
+                          <span class="badge-light text-danger">expr</span>. Perhatikan bahwa aturan ini mendefinisikan ekspresi dalam istilah ekspresi, 
+                          contoh penggunaan rekursi dalam definisi tata bahasa bebas konteks. Rekursi adalah satu hal yang memberi CFG kekuatan yang 
+                          tidak dimiliki oleh RE dan FA</li>
+                        <li>Aturan yang tersisa mengatakan bahwa penjumlahan, selisih, hasil perkalian, atau pembagian dari dua expr juga merupakan expr</li>
+                      </ul>
+                    <br>
+
+                    <li>CFG for Programming Languages</li>
+                      <p>Struktur bahasa Inggris diberikan dalam istilah mata pelajaran, kata kerja, dll. Struktur program komputer diberikan dalam 
+                        istilah prosedur, pernyataan, ekspresi, dll. Misalnya, ekspresi aritmatika yang terdiri dari penjumlahan dan perkalian dapat 
+                        dijelaskan menggunakan aturan berikut:</p>
+                      <img src="img/tbo5-cfg-for-Programming-Languages.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      <p>Di sini, kami telah menggunakan <span class="badge-light text-danger">:: =</span> untuk didefinisikan sebagai bukan panah 
+                        (<span class="badge-light text-danger">--></span>) seperti sebelumnya. Metalanguage BNF (Backus-Naur Form) adalah cara untuk 
+                        menentukan bahasa bebas konteks, dan BNF awalnya didefinisikan menggunakan <span class="badge-light text-danger">:: =</span> daripada 
+                        <span class="badge-light text-danger">--></span>. Selama kita memahami apa yang dimaksud dan apa saja kemampuan dari notasi gramatikal 
+                        tersebut, maka notasi tersebut tidak menjadi masalah. Kami akan sering menghilangkan tanda kurung sudut, 
+                        <span class="badge-light text-danger"><></span>, saat menulis BNF.</p>
+                      <p>Tidak seperti bahasa alami seperti bahasa Inggris, semua string hukum dalam bahasa pemrograman dapat ditentukan menggunakan tata bahasa 
+                        bebas konteks. Namun, tata bahasa untuk bahasa pemrograman juga memiliki string yang salah secara semantik. Misalnya bahasa bebas konteks tidak dapat digunakan untuk mengetahui apakah variabel, katakanlah, A, dideklarasikan menjadi tipe boolean digunakan dalam ekspresi aritmentik A + 1.</p>
+                    <br>
+
+                    <li>CFG Parsing For High-Speed Network Applications</li> 
+                      <ul>
+                        <li>Memproses data untuk melintasi internet</li>
+                        <li>Harus ada pencocok pola berbasis aturan yang mampu mendeteksi string dan / atau ekspresi reguler</li>
+                        <li>Pencocokan pola yang naif rentan terhadap identifikasi positif palsu</li>
+                        <li>CFG memberikan ekspresi tingkat yang lebih tinggi daripada string dan ekspresi reguler</li>
+                        <li>Goal: merancang dan menerapkan CFG kecepatan tinggi</li>
+                      </ul>
+                      <br>
+                      <p>Terdapat 4 komponen utama pada arsitektur parser:</p>
+                      <ul>
+                        <li>Tokenizer (pencocokan pola)</li>
+                        <li>Struktur parsing (dari tata bahasa)</li>
+                        <li>Unit deteksi kesalahan</li>
+                        <li>Unit pemulihan</li>
+                      </ul>
+                      <img src="img/tbo5-Parsing-For High-Speed Network-Applications.jpg" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <br>
+
+                    <li>CFG For Human Behavior Recognition</li>
+                      <p>Pengenalan otomatis aktivitas dan perilaku manusia masih menjadi masalah yang menantang karena berbagai alasan, termasuk keakuratan 
+                        data yang terbatas yang diperoleh oleh perangkat penginderaan, variabilitas tinggi dari perilaku manusia, dan kesenjangan antara 
+                        tampilan visual dan semantik adegan.</p>
+                      <p>Pendekatan simbolis dapat secara signifikan menyederhanakan analisis dan mengubah data mentah menjadi rantai pola penuh makna. 
+                        Hal ini memungkinkan menyingkirkan sebagian besar kekacauan yang dihasilkan oleh operasi pemrosesan tingkat rendah, menanamkan 
+                        informasi kontekstual yang signifikan ke dalam data, serta menggunakan pendekatan sintaksis sederhana untuk melakukan pencocokan 
+                        antara urutan dan model yang akan datang.</p>
+                      <p>Pernyataan masalah:</p>
+                      <img src="img/tbo5-cfg-for-Human-Behavior-Recognition.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      <p>Aktivitas manusia sangat bervariasi: orang cenderung melakukan tindakan yang sama menggunakan jalan yang berbeda dalam kehidupan normal. 
+                        Tujuan dari pekerjaan ini adalah untuk menentukan teknik yang kuat terhadap kebisingan untuk mewakili, mendeteksi dan mengklasifikasikan 
+                        perilaku manusia yang kompleks.</p>
+                      <p>Solusi berdasarkan CFG:</p>
+                      <ul>
+                        <li>Merepresentasikan jalur masuk melalui sekumpulan hot spot yang ditentukan, untuk membawa representasi level rendah ke representasi 
+                          simbolis;</li>
+                        <li>Selama pelatihan, terapkan algoritme untuk mengekstrak tanda tangan setiap kelas dan membuat kode model CFG berdasarkan sampel positif 
+                          dan negatif;</li>
+                        <li>Memperkenalkan kemungkinan pelatihan ulang sistem secara efisien jika ada kejadian yang salah diklasifikasikan atau tidak dikenali;</li>
+                        <li>Dalam klasifikasi, operasikan prosedur parsing yang memungkinkan deteksi yang benar dari aktivitas juga saat aktivitas tersebut 
+                          digabungkan dan / atau disarangkan satu sama lain.</li>
+                      </ul> <br>
+                      <p>Hasil:</p>
+                      <img src="img/tbo5-result.png" alt="Statement Explain" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <br>
+
+                    <li>Pemanfaatan CFG Lainnya:</li>
+                      <ul>
+                        <li>For parsing the program by constructing syntax tree</li>
+                        <li>For construction of compilers</li>
+                        <li>For data processing</li>
+                        <li>For natural language processing</li>
+                        <li>For neural Networks</li>
+                        <li>For multi functional radar construction</li>
+                      </ul>
+                  </ol>
+
+              </div>
+            </div>
+          </div> <!-- Akhir Col-12 -->
+       
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      Department of Computer Science. 2001. <b>Grammars</b>. New York: University of Rochester. <a href="https://bit.ly/2W2CXZ1" target="_blank">https://bit.ly/2W2CXZ1</a>. <br>
+      Department Science. tth. <b>Context-free Grammars for Programming Languages</b>. Worcester: Worcester Polytechnic Institute. <a href="https://bit.ly/2W48pGa" target="_blank">https://bit.ly/2W48pGa</a>. <br>
+      Jaiswal, Sonoo. tth. <b>Context–Free Grammar (CFG)</b>. JavaTPoint: <a href="https://bit.ly/33Z4AWX" target="_blank">https://bit.ly/33Z4AWX</a>. <br>
+      Rosani, Andrea, dkk. 2015. <b>Human Behavior Recognition Using A Context-Free Grammar</b>. Trento: University of Trento. <a href="https://bit.ly/342dh2K" target="_blank">https://bit.ly/342dh2K</a>. <br> 
+      Scott, William, dkk. 2004. <b>Development and Application of a Context-free Grammar for Requirements</b>. Adelaide:  Universitas Australia Selatan.  <a href="https://bit.ly/3qPIPD8" target="_blank">https://bit.ly/3qPIPD8</a>. <br>
+      Thogarcheti, Bramara Manjeera. 2015. <b>Application of Context Free Grammers</b>. SlidePlayer: <a href="https://bit.ly/344TeAV" target="_blank">https://bit.ly/344TeAV</a>. 
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2020 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
