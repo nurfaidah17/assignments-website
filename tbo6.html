@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      ol li {
+          font-weight:bold;
+      }
+      ul li {
+          font-weight:normal;
+      }
+      li > p {
+          font-weight:normal;
+      }
+    </style> 
+
+    <title>Teori Bahasa dan Otomata | Chomsky Hierarchy</title>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-light">
+                <a class="navbar-brand" href="#">
+                  <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+                </a>              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">CHOMSKY HIERARCHY TERHADAP GRAMMAR/ BAHASA KOMPUTASI</h1>
+                <p class="lead"><b>Teori Bahasa dan Otomata</b></p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify"> 
+                <h3>Apa itu Chomsky Hierarchy?</h3>
+                  <p>Dalam teori bahasa formal, ilmu komputer, dan linguistik, hierarki Chomsky (terkadang disebut 
+                    sebagai hierarki Chomsky-Schützenberger) adalah hierarki penahanan kelas-kelas tata bahasa formal. 
+                    Hierarki tata bahasa ini dijelaskan oleh Noam Chomsky pada tahun 1956.  Itu juga dinamai Marcel-Paul 
+                    Schützenberger, yang memainkan peran penting dalam pengembangan teori bahasa formal.</p>
+                  <img src="img/tbo6-Comsky-1.jpg" alt="Chomsky Hierarchy" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                  <p class="text-center text-muted">Noam Chomsky</p>
+                  <p class="my-3">Menurut Noam Chomsky, tata Bahasa dibagi menjadi 4 jenis, berikut tabel menunjukkan perbedaannya satu sama lain:</p>
+                  <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
+                    <thead class="text-center">
+                      <tr class="table-active">
+                        <td><b>Grammar Type</b></td>
+                        <td><b>Grammar Accepted</b></td>
+                        <td><b>Language Accepted</b></td>
+                        <td><b>Automaton</b></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Type 0</td>
+                        <td>Unrestricted grammar</td>
+                        <td>Recursively enumerable language</td>
+                        <td>Turing Machine</td>
+                      </tr>
+                      <tr>
+                        <td>Type 1</td>
+                        <td>Context-sensitive grammar</td>
+                        <td>Context-sensitive language</td>
+                        <td>Linear-bounded automaton</td>
+                      </tr>
+                      <tr>
+                        <td>Type 2</td>
+                        <td>Context-free grammar</td>
+                        <td>Context-free language/td>
+                        <td>Pushdown automaton</td>
+                      </tr>
+                      <tr>
+                        <td>Type 3</td>
+                        <td>Regular grammar</td>
+                        <td>Regular language</td>
+                        <td>Finite state automaton</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p>Berikut ilustrasi yang  menunjukkan ruang lingkup setiap jenis tata bahasa:</p>
+                  <img src="img/tbo6-Comsky-2.jpg" alt="Chomsky Hierarchy" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                  <p class="my-3">Setiap bahasa reguler merupakan context-free, setiap bahasa context-free merupakan context-sensitive, 
+                    setiap bahasa context-sensitive bersifat rekursif dan setiap bahasa rekursif dapat dihitung secara rekursif. Ini semua 
+                    adalah inklusi yang tepat, yang berarti bahwa terdapat bahasa yang dapat dihitung secara rekursif yang tidak 
+                    context-sensitive, bahasa context-sensitive yang bukan bahasa context-free dan bahasa context-free yang tidak reguler.</p>
+                  
+                <h3>Tipe-tipe Grammar</h3>
+                  <ol>
+                    <li>Type 3: Regular Grammar</li>
+                      <p>Tata bahasa tipe-3 menghasilkan bahasa reguler. Bahasa reguler biasanya digunakan untuk menentukan pola 
+                        pencarian dan struktur leksikal bahasa pemrograman. Bahasa-bahasa ini persis dengan semua bahasa yang dapat 
+                        diterima oleh finite state autonom (FSA).</p>
+                      <p>Tipe 3 adalah bentuk tata bahasa yang paling terbatas, harus memiliki satu non-terminal di sisi kiri dan 
+                        sisi kanan yang terdiri dari satu terminal atau terminal tunggal diikuti oleh satu non-terminal.</p>
+                      <p>Aturan Produksi:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p><b>X → a</b> atau <b>X → aY</b></p>
+                        <p>dimana <b>X</b>, <b>Y ∈ N</b> (Non terminal) <br>
+                          dan <b>∈ T</b> (Terminal) <br>
+                          Aturan <b>S → ε</b> diperbolehkan jika <b>S</b> tidak muncul di sisi kanan aturan mana pun.</p>
+                      </div>
+                      <p>Contoh:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p>X → ε</p>
+                        <p>X → a | aY</p>
+                        <p>X → b</p>
+                      </div>
+                    <br>
+                    
+                    <li>Type 2: Context-Free Grammar</li>
+                      <p>Tata bahasa tipe-2 menghasilkan bahasa Context-free. Bahasa-bahasa yang dihasilkan oleh tata bahasa dikenali oleh 
+                        Pushdown Automata.</p>
+                      <p>Pada tipe 2 ini:
+                        <ul>
+                          <li>Pertama-tama harus Tipe 1</li>
+                          <li>Sisi kiri produksi hanya dapat memiliki satu variabel</li>
+                        </ul>
+                      </p>
+                      <p>Aturan Produksi:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p><b>A → γ</b></p>
+                        <p>dimana <b>A ∈ N</b> (Non Terminal) <br>
+                          dan <b>γ ∈ (T ∪ N) *</b> (String terminal dan non-terminal)</p>
+                      </div>
+                      <p>Contoh:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p>S → X a </p>
+                        <p>X → a </p>
+                        <p>X → aX </p>
+                        <p>X → abc </p>
+                        <p>X → ε</p>
+                      </div>
+                    <br>
+                    
+                    <li>Type 1: Context-Sensitive Grammar</li>
+                      <p>Tata bahasa tipe-1 menghasilkan bahasa context-sensitive. Bahasa yang dihasilkan oleh tata bahasa dikenali oleh 
+                        Linear Bound Automata. Dalam Tipe 1 ini pertama-tama tata bahasa Tipe 1 harus Tipe 0.</p>
+                      <p>Aturan Produksi:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p><b>α A β → α γ β</b></p>
+                        <p>dimana <b>A ∈ N</b> (Non-terminal) <br>
+                          dan <b>α, β, γ ∈ (T ∪ N) *</b> (String terminal dan non-terminal)</p>
+                        <p>String <b>α</b> dan <b>β</b> boleh kosong, tetapi <b>γ</b> tidak boleh kosong. <br>
+                          Aturan <b>S → ε</b> diperbolehkan jika S tidak muncul di sisi kanan aturan mana pun.</p>
+                      </div>
+                      <p>Contoh:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p>AB → AbBc</p>
+                        <p>A → bcA</p>
+                        <p>B → b</p>
+                      </div>
+                    <br>
+
+                    <li>Type 0: Unrestricted Grammar</li>
+                      <p>Tata bahasa tipe-0 menghasilkan bahasa yang dapat dihitung secara rekursif (recursively enumerable languages). Mereka menghasilkan 
+                        bahasa yang dikenali oleh mesin Turing. Produksi tidak memiliki batasan. Itu adalah tata bahasa struktur fase apa pun termasuk 
+                        semua tata bahasa formal.</p>
+                      <p>Aturan Produksi:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p><b>α → β</b></p>
+                        <p>dimana <b>α</b> berupa string terminal dan nonterminals dengan minimal satu non terminal dan <b>α</b> tidak boleh null. <br>
+                          <b>β</b> adalah string terminal dan non-terminal</p>
+                      </div>
+                      <p>Contoh:</p>
+                      <div class="card card-header border-light mb-3">
+                        <p>S → ACaB</p>
+                        <p>Bc → acB</p>
+                        <p>CB → DB</p>
+                        <p>aD → Db</p>
+                      </div>
+                  </ol>
+
+              </div>
+            </div>
+          </div> <!-- Akhir Col-12 -->
+       
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      <b>Chomsky Classification of Grammars</b>, Tutorials Point: <a href="https://bit.ly/3gJQGxg" target="_blank">https://bit.ly/3gJQGxg</a>. <br>
+      <b>Chomsky Hierarchy</b>, Wikipedia: <a href="https://bit.ly/3oRpmQD" target="_blank">https://bit.ly/3oRpmQD</a>. <br>
+      <b>Chomsky Hierarchy in Theory of Computation</b>, GeeksforGeeks: <a href="https://bit.ly/3meogfZ" target="_blank">https://bit.ly/3meogfZ</a>. 
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2020 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
