@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      ol li {
+          font-weight:bold;
+      }
+      ul li {
+          font-weight:normal;
+      }
+      li > p {
+          font-weight:normal;
+      }
+    </style> 
+
+    <title>Teori Bahasa dan Otomata | Mesin Turing</title>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-light">
+                <a class="navbar-brand" href="#">
+                  <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+                </a>              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">MESIN TURING</h1>
+                <p class="lead"><b>Teori Bahasa dan Otomata</b></p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify"> 
+                <h3>Sejarah</h3>
+                  <img src="img/tbo7-alan-turing.png" alt="Mesin Turing" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto; margin-bottom: 1px;">
+                  <p>Jauh sebelum lahirnya program komputer, Alan Turing pada tahun 1936 telah mengeluarkan gagasannya berupa model mesin 
+                    abstrak sebagai alat mekanik untuk mengerjakan prosedur yang efektif. Model ini disebut Mesin Turing.</p>
+                  <p>Mesin turing dapat diadaptasi untuk mensimulasi logika dari setiap algoritma oleh karena itu cara kerja mesin turing adalah 
+                    ekivalen dengan cara kerja komputer sekarang ini dan mesin turing juga ekivalen dengan problema komputasi matematika. 
+                    Mesin turing tidak ditujukan sebagai teknologi komputasi praktis tetapi lebih sebagai eksperimen pemikiran yang mewakili 
+                    sebuah mesin komputasi. Mesin turing membantu para ilmuan komputer memahami batas-batas komputasi mekanis.</p>
+                  <p>Pada 1950, Alan mengeluarkan paper yang berpengaruh besar berjudul Computing Machinery and Intelligence. Dalam <i>paper</i>-nya 
+                    ini, Alan mengusulkan "Tes Turing" sebagai sebuah metode untuk menentukan apakah sebuah mesin memiliki 
+                    "<i>artificial intelligence</i>". Turing melihat otak manusia sebagai sebuah "mesin yang tidak teratur" yang belajar melalui 
+                    pengalaman. Hingga tahun 1990-an tes ini masih dianggap sebagai cara yang paling baik untuk menentukan intelegensia dari 
+                    sebuah mesin.</p>
+                <br>
+
+                <h3>Apa itu Mesin Turing?</h3>
+                  <img src="img/tbo7-mesin-turing.png" alt="Mesin Turing" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto;">
+                  <p>Mesin Turing adalah model komputasi teoretis yang berfungsi sebagai model yang ideal untuk melakukan perhitungan matematis. 
+                    Walaupun model ideal diperkenalkan sebelum komputer nyata dibangun, model ini tetap diterima kalangan ilmu komputer sebagai 
+                    model komputer yang sesuai untuk menentukan apakah suatu fungsi dapat diselesaikan oleh komputer atau tidak (menentukan 
+                    fungsi yang dapat dihitung). Mesin Turing terkenal dengan ungkapan "<i>Apapun yang bisa dilakukan oleh Mesin Turing pasti 
+                      bisa dilakukan oleh komputer</i>".</p>
+                  <p>Sebuah mesin turing terdiri atas <i>tape</i> (pita) dengan jumlah sel yang tak terhingga, setiap sel berisi satu simbol 
+                    input dan dengan demikian string input dapat ditempatkan pada pita. Pita kosong diisi dengan karakter kosong.
+                    Kemudian Finite control dan head tape yang bertanggung jawab untuk membaca simbol masukan saat ini. Head tape dapat 
+                    bergerak dari kiri ke kanan. Sekumpulan keadaan terbatas yang harus dilalui mesin. Kumpulan simbol hingga yang disebut 
+                    simbol eksternal yang digunakan dalam membangun logika mesin turing.</p>
+                  
+                  <p>Mesin Turning dapat dimodelkan dengan bantuan representasi berikut.</p>
+                  <img src="img/tbo7-model-2.png" alt="Mesin Turing" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+
+                  <p class="my-3">Mesin Turing M dapat didefinisikan oleh tujuh tupel sebagai:</p>
+                  <div class="card card-header border-light mb-3"><pre><span class="text-danger">M</span> = (Q, X, ∑, δ, q<sub>0</sub>, B, F)</pre></div>
+                  <p>Dimana,</p>
+                  <ul>
+                    <li><span class="badge-light">Q</span> adalah himpunan keadaan yang terbatas</li>
+                    <li><span class="badge-light">X</span> adalah tape alphabet </li>
+                    <li><span class="badge-light">∑</span> adalah alfabet masukan</li>
+                    <li><span class="badge-light">δ</span> adalah fungsi transisi; δ: Q × X → Q × X × {Left_shift, Right_shift}</li>
+                    <li><span class="badge-light">q<sub>0</sub></span> adalah status awal</li>
+                    <li><span class="badge-light">B</span> adalah simbol kosong</li>
+                    <li><span class="badge-light">F</span> adalah himpunan keadaan akhir</li>
+                  </ul>
+
+                <br>
+
+                <!-- <h3>Perbandingan dengan Autonom Sebelumnya</h3>
+                  <p>Tabel berikut menunjukkan perbandingan perbedaan mesin Turing dengan Finite Automaton dan Pushdown Automaton.</p>
+                  <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl}">
+                    <thead class="text-center">
+                      <tr class="table-active">
+                        <td><b>Machine</b></td>
+                        <td><b>Stack Data Structure</b></td>
+                        <td><b>Deterministic?</b></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Finite Automaton</td>
+                        <td>N.A</td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td>Pushdown Automaton</td>
+                        <td>Last In First Out (LIFO)</td>
+                        <td>No</td>
+                      </tr>
+                      <tr>
+                        <td>Turing Machine</td>
+                        <td>Infinite tape</td>
+                        <td>Yes</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <br> -->
+
+                <h3>Contoh Mesin Turing</h3>
+                  <p>Bangun TM untuk fungsi penjumlahan untuk sistem bilangan unary.</p>
+                  <p><b>Solusi:</b> <br>
+                    Bilangan unary hanya terdiri dari satu karakter, yaitu bilangan 5 dapat ditulis dalam sistem bilangan unary sebagai 11111. 
+                    Pada TM ini kita akan melakukan penjumlahan dua bilangan unary.</p>
+                  <p><b>Sebagai contoh:</b><br>
+                    2 + 3 <br>
+                    yaitu 11 + 111 = 11111
+                  </p>
+                  <p>Jika Anda mengamati proses penjumlahan ini, Anda akan menemukan kemiripan dengan fungsi penggabungan string.</p>
+                  <p>Dalam hal ini, kita cukup mengganti + dengan 1 dan bergerak maju ke kanan untuk mencari ujung string yang akan kita ubah 
+                    1 terakhir menjadi Δ.</p>
+                  <p><b>Input:</b> 3 + 2</p>
+                  <p>Simulasi untuk 111 + 11Δ dapat dilihat sebagai berikut:</p>
+                  <img src="img/tbo7-ex1.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+                  <p>Pindah ke kanan ke + tanda sebagai:</p>
+                  <img src="img/tbo7-ex2.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+                  <p>Ubah + menjadi 1 dan geser ke kanan sebagai:</p>
+                  <img src="img/tbo7-ex3.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+                  <p>Sekarang, ke kanan</p>
+                  <img src="img/tbo7-ex4.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+                  <p>Sekali lagi bergerak ke kanan</p>
+                  <img src="img/tbo7-ex5.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+                  <p>Sekarang Δ telah ditemukan, jadi pindah saja ke kiri sebagai:</p>
+                  <img src="img/tbo7-ex6.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+                  <p>Ubah 1 menjadi Δ</p>
+                  <img src="img/tbo7-ex7.png" alt="Mesing Turing" class="img-responsive" style="max-width: 100%; height: auto; display: block;">
+
+                  <p>Jadi rekaman itu sekarang terdiri dari penjumlahan dua bilangan unary.</p>
+                  <p>TM akan terlihat seperti berikut:</p>
+                  <p>Di sini, kami menerapkan fungsi f (a + b) = c. Kami mengasumsikan a dan b keduanya adalah elemen bukan nol.</p>
+                  <img src="img/tbo7-ex8.png" alt="Mesing Turing" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+
+              </div>
+            </div>
+          </div> <!-- Akhir Col-12 -->
+       
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      <b>Basic Model of Turing Machine</b>, Javatpoint: <a href="https://bit.ly/34bGNmY" target="_blank">https://bit.ly/34bGNmY</a>. <br>
+      <b>Example of TM</b>, JavaTPoint: <a href="https://bit.ly/2KjR21s" target="_blank">https://bit.ly/2KjR21s</a>. <br>
+      <b>Mesin Turing</b> Wikipedia: <a href="https://bit.ly/3oUo4Ev" target="_blank">https://bit.ly/3oUo4Ev</a>. <br>
+      <b>Turing Machine Introduction</b>, Tutorials Point: <a href="https://bit.ly/34c6Vhx" target="_blank">https://bit.ly/34c6Vhx</a>. 
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2020 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
