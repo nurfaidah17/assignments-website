@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      ol li {
+          font-weight:bold;
+      }
+      ul li {
+          font-weight:normal;
+      }
+      li > p {
+          font-weight:normal;
+      }
+    </style> 
+
+    <title>Forensik Digital | Image Forensic</title>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-light">
+                <a class="navbar-brand" href="#">
+                  <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+                </a>              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">IMAGE FORENSICS UNTUK DETEKSI REKAYASA FOTO DIGITAL</h1>
+                <p class="lead"><b>Forensik Digital</b></p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify"> 
+                <h3>Image Forensic</h3>
+                  <img src="img/forensik-digital-0.png" alt="Mesin Turing" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto; margin-bottom: 1px;">
+                  <p>Digital forensik adalah cabang ilmu komputer yang berfokus pada pengembangan bukti yang berkaitan dengan file digital. Bukti forensik digital akan 
+                    berhubungan dengan dokumen komputer, email, teks, foto digital, program perangkat lunak, atau rekaman digital lainnya yang berkaitan dengan kasus hukum. 
+                    Landasan forensik digital ialah praktik pengumpulan, analisis, dan pelaporan data digital. Investigasi forensik digital memiliki penerapan yang 
+                    sangat beragam.</p>
+                  <p>Dalam image forensic, objek yang diperiksa dan dianalisis adalah image file. Image file itu sendiri memiliki dua pengertian yang berbeda. 
+                    Pertama merujuk pada hasil forensic imaging (duplikasi secara fisik sektor per sektor) yang menggunakan metode terkini disk to file. Kedua merujuk
+                     pada file gambar hasil fotografi menggunakan kamera, handycam, atau handphone yang menggunakan sistem penyimpanan file digital.</p>
+                  <p>Tujuan umum dari teknik forensic (untuk memeriksa keaslian file foto) yaitu untuk membuktikan bahwa sebuah foto adalah foto asli/palsu, untuk 
+                    digunakan sebagai dokumen analisis intelijen dan sebagai alat bukti yang bisa diajukan dalam proses hukum pengadilan. 
+                    Dalam pemeriksaan keaslian file foto digunakan beberapa teknik forensik untuk pembuktian dan pemeriksaan terhadap foto tersebut baik 
+                    dengan menggunakan software yang digunakan untuk memeriksa data sensitif yang terdapat di dalam foto, maupun dengan bantuan alat-alat 
+                    dan teknik fotografi.</p>
+                  
+                  <b>Metode Reserving</b>
+                    <p>Metode reversing yaitu mencocokkan foto yang di-<i>upload</i> dengan foto yang sudah ada di website dan media sosial. 
+                      Metode ini dapat dilakukan melalui platform Google Image atau TineEye. </p>
+                    <p><i>(Note: Metode reversing bukanlah bentuk forensic digital karena hanya mencocokkan foto, bukan untuk menganalisis foto)</i></p>
+
+                  <b>Metode Algoritma Error Level Analysis (ELA)</b>
+                    <p>Error Level Analysis (ELA) adalah algoritma kompresi JPEG untuk deteksi forensik gambar. ELA bekerja dengan cara mendecode 
+                      gambar untuk melihat kemungkinan manipulasi. Salah satu kelebihan logaritma ini adalah kemampuannya mendeteksi pada setiap 
+                      area yang dipetakan dalam level kompresi yang berbeda. Ini karena algoritma JPEG mengompresi gambar yang hilang: algoritme 
+                      ini menghilangkan sejumlah frekuensi tinggi dan mengurangi perbedaan antara tepi, tekstur, dan permukaan kontras tinggi. 
+                      Setiap pengkodean ulang (perekaman ulang) gambar menambah lebih banyak penurunan kualitas gambar.</p>
+                    <p>ELA membagi gambar menjadi 8 x 8 blok dan dikompres secara independen dengan tingkat kesalahan hingga 95%. Jika gambar 
+                      tidak dimodifikasi, persegi harus memiliki potensi kesalahan yang serupa (memberikan sekitar tingkat kualitas yang sama). 
+                      Jika gambar dimodifikasi, area yang dimodifikasi akan muncul dengan tingkat kesalahan yang lebih tinggi (lebih terang). </p>
+                    <p>Secara konkret, hal-hal yang harus diperhatikan:</p>
+                      <ul>
+                        <li>Tepi = Tepi yang serupa harus memiliki kecerahan yang sama pada hasil ELA. Semua tepi kontras tinggi harus terlihat 
+                          sama dan semua tepi kontras rendah akan terlihat sama. Dengan foto asli, tepi kontras rendah harus hampir seterang 
+                          tepi kontras tinggi</li>
+                        <li>Tekstur = Tekstur serupa harus memiliki pewarnaan serupa di bawah ELA. Area dengan lebih banyak detail di permukaan, 
+                          seperti close-up bola basket, kemungkinan akan memiliki skor ELA yang lebih tinggi daripada permukaan yang mulus</li>
+                        <li>Permukaan = Terlepas dari warna permukaan yang sebenarnya, semua permukaan datar harus memiliki warna yang kurang 
+                          lebih sama di bawah ELA</li>
+                      </ul>
+                    <p><i>(Note: ELA hanyalah sebuah algoritma yang menunjukkan jumlah perbedaan yang terjadi saat merekam ulang JPEG; Lebih banyak putih 
+                      berarti lebih banyak perubahan, dan hitam berarti tidak ada perubahan; Hasil ELA yang “blank” tidak berarti diubah, putih menandakan potensi 
+                      tingkat kesalahan yang lebih tinggi yang harus dibandingkan dengan tepi dan permukaan yang serupa pada gambar; Saat menganalisis gambar 
+                      disarankan menggunakan versi gambar dengan resolusi yang terbaik untuk hasil yang lebih akurat; Jika sebuah gambar dikompresi berulang kali 
+                      dalam format JPEG, ELA akan memberikan gambar hitam; Serta interpretasi hasil mungkin tidak konklusif, maka penting untuk memvalidasi hasil 
+                      dengan teknik analisis dan algoritma lain)</i></p>
+                <br>
+
+                <h3>Studi Kasus Image Forensic</h3>
+                  <p>Pada studi kasus ini menggunakan dua buah tools yaitu TinEye (<a href="https://tineye.com" target="_blank">https://tineye.com</a>)
+                    untuk reverse pencarian gambar atau mencocokkan foto dan ForensicallyBeta
+                    (<a href="https://29a.ch/photo-forensics" target="_blank">https://29a.ch/photo-forensics</a>) untuk Teknik Error Level Analysis.
+                    Berikut gambar 1 dan 2 yang akan diselidiki apakah kedua gambar tersebut asli atau telah mengalami modifikasi.</p>
+                  <img src="img/forensik-digital-1.png" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto;">
+                  
+                  <p style="color:white">nothing ges</p>
+
+                  <b>TinEye</b>
+                  <ul>
+                    <li>Gambar 1</li>
+                    <img src="img/forensik-digital-2.png" alt="" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <p>Pada penelusuan gambar 1 menggunakan TinEye di atas, terdapat 53 hasil penelusuran yang menampilkan gambar dalam 2 versi,
+                      sehingga dapat diasumsikan bahwa salah satu dari foto tersebut adalah palsu/sudah dimodifikasi, selanjutnya masih akan diselidiki
+                      menggunakan Teknik Error Level Analysis.</p>
+
+                    <li>Gambar 2</li>
+                    <img src="img/forensik-digital-3.png" alt="" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <p>Pada penelusuan gambar 2 menggunakan TinEye di atas, terdapat 13 hasil penelusuran yang menampilkan gambar dalam 1 versi,
+                      sehingga dapat diasumsikan bahwa foto tersebut adalah asli/tanpa modifikasi, namun masih akan diselidiki menggunakan teknik 
+                      Error Level Analysis.</p>
+                  </ul>
+
+                  <b>ForensicallyBeta</b>
+                  <ul>
+                    <li>Gambar 1</li>
+                    <img src="img/forensik-digital-4.png" alt="" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <p>Gambar di atas merupakan hasil setelah diproses menggunakan ForensicallyBeta dengan teknik Error Level Analysis.
+                      Gambar tersebut memiliki perbedaan kontras yang cukup menonjol yaitu pada bagian yang diperbesar.</p>
+
+                    <li>Gambar 2</li>
+                    <img src="img/forensik-digital-5.png" alt="" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <p>Gambar di atas merupakan hasil setelah diproses menggunakan ForensicallyBeta dengan teknik Error Level Analysis.
+                      Gambar tersebut memiliki perbedaan kontras antara bagian gambar yang blur (efek bokeh) dan yang tidak blur, namun masing-masing 
+                      kedua bagian tersebut tidak memiliki kontras yang menunjukkan ada penonjolan disuatu bagian 
+                      (gambar memiliki tingkat kesalahan yang sama secara signifikan / memiliki warna yang kurang lebih sama).</p>
+                  </ul>
+
+                  <b>Kesimpulan</b>
+                    <p>Berdasarkan hasil reversing dan analisis menggunakan algoritma ELA, gambar 1 telah mengalami modifikasi (penambahan objek masker). 
+                      Sedangkan gambar 2 tidak mengalami modifikasi (asli).</p>
+                      <img src="img/forensik-digital-6.png" alt="" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+
+
+              </div>
+            </div>
+          </div> <!-- Akhir Col-12 -->
+       
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      <a href="https://tineye.com/" target="_blank">https://tineye.com/</a><br>
+      <a href="https://29a.ch/photo-forensics/" target="_blank">https://29a.ch/photo-forensics/</a><br>
+      <a href="https://www.mathemathieu.fr/component/attachments/download/1341" target="_blank">https://www.mathemathieu.fr/component/attachments/download/1341</a><br>
+      <a href="https://jatengtoday.com/forensik-foto-digital-18841" target="_blank">https://jatengtoday.com/forensik-foto-digital-18841</a><br>
+      <a href="http://journal.binadarma.ac.id/index.php/jurnalmatrik/article/view/518/274" target="_blank">http://journal.binadarma.ac.id/index.php/jurnalmatrik/article/view/518/274</a><br>
+      <a href="https://www.researchgate.net/publication/336847798_Analisis_Image_Forensic_Untuk_Mendeteksi_Pemalsuan_Foto_Digital" target="_blank">https://www.researchgate.net/publication/336847798_Analisis_Image_Forensic_Untuk_Mendeteksi_Pemalsuan_Foto_Digital</a><br>
+      
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2021 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
