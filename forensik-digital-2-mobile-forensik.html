@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      ol li {
+          font-weight:bold;
+      }
+      ul li {
+          font-weight:normal;
+      }
+      li > p {
+          font-weight:normal;
+      }
+
+      .post-body {
+        user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        -khtml-user-select:none;
+        -webkit-user-select:none
+      }
+    </style> 
+
+    <title>Forensik Digital | Mobile Device Forensic</title>
+  </head>
+  <body class="post-body">
+    <header>
+        <div class="container">
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-light">
+                <a class="navbar-brand" href="#">
+                  <img src="img/logo.jpg" width="50" height="50" alt="Nurfaidah">
+                </a>              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+<!-- Awal JUMBOTRON -->
+    <section class="jumbotron-bg">
+        <div class="jumbotron warna-bg text-white">
+            <div class="container">
+                <h1 class="display-4">MOBILE DEVICE FORENSICS</h1>
+                <p class="lead"><b>Forensik Digital</b></p>
+            </div>
+        </div>
+    </section>
+<!-- Akhir JUMBOTRON -->
+<br>
+
+<!-- Awal Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-4"> <!-- Awal Col-12-->
+            <div class="card">
+              <div class="card-body text-justify"> 
+                <h3>MOBILE FORENSICS</h3>
+                  <img src="img/mobile-forensik-1.png" alt="mobile-forensik-1" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto; margin-bottom: 1px;">
+                  <p>Ponsel merupakan salah satu teknologi yang sering digunakan oleh manusia dalam kegiatan sehari-hari. Tujuan utamanya adalah orang yang menggunakan ponsel 
+                    untuk berkomunikasi dengan orang lain. Bentuk komunikasi melalui udara dapat tujuan bervariasi, dari yang hanya berbicara tentang hal-hal sederhana sampai 
+                    hal-hal yang serius, misalnya tentang pekerjaan dan kegiatan positif dan negatif. Ini bisa menjadi bentuk negatif dari percakapan tentang rencana untuk kejahatan 
+                    seperti pembunuhan, perampokan, pemerasan, korupsi dan narkoba. Analisis forensik digital dan peneliti harus dapat mengantisipasi hal-hal ini, sehingga ketika 
+                    ada bukti ponsel yang disita dari para pelaku dapat diperiksa dengan baik sesuai dengan prinsip-prinsip dasar forensik digital.</p>
+                <br>
+
+                <h3>ANDROID FORENSICS</h3>
+                  <h5>1. Mobile Phone Fundamentals</h5>
+                  <p>Ponsel cerdas menjadi lebih bertenaga (misalnya meningkatkan daya pemrosesan CPU, berbagai macam sensor yang terpasang di dalamnya, dan antarmuka layar sentuh yang mudah digunakan); dan dengan demikian, jumlah aplikasi yang tersedia untuk perangkat semacam itu melonjak, merevolusi kehidupan kita. Seperti yang ditunjukkan pada Gambar. 15.2, smartphone khas saat ini memiliki struktur logis berikut dan terdiri dari:</p>
+                  <img src="img/mobile-forensik-2.png" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                  <ul>
+                    <li><b>Prosesor</b>, sebagai otak dari smartphone.</li>
+                    <li><b>Memori Penyimpanan</b>, terdiri dari memori internal (penyimpanan internal) dan kartu microSD (penyimpanan eksternal). 
+                      Memori internal dipartisi menjadi dua bagian yaitu Penyimpanan sistem (untuk menyimpan sistem operasi Android serta Aplikasi Sistem) dan Penyimpanan telepon.</li>
+                    <li><b>Sensor</b>, memungkinkan smartphone untuk menangkap masukan pengguna yang beragam serta lingkungan terdekat di mana mereka berada, sehingga mengakibatkan 
+                      sebuah smartphone berisi banyak data yang semakin sensitif tentang penggunanya. Berbagai sensor canggih, seperti akselerometer, kompas digital, gravitasi, giroskop, 
+                      GPS, sensor sidik jari, dan termometer.</li>
+                    <li><b>Kartu SIM (Subscriber Identity Module)</b>, untuk berkomunikasi dengan operator seluler.</li>
+                    <li><b>Konektivitas Jaringan</b>, mengakibatkan jumlah aplikasi jaringan melonjak serta komputasi awan (aplikasi dan penyimpanan data disediakan sebagai layanan 
+                      untuk pengguna seluler melalui Internet) menjadi semakin umum di smartphone.</li>
+                    <li><b>Kamera dan Speaker</b>, sartphone masa kini dilengkapi dengan kamera digital dan speaker.</li>
+                  </ul>
+
+                  <h5>2. Mobile Device Forensic Investigation</h5>
+                  <img src="img/mobile-forensik-3.png" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto;">
+                  <p>Prosedur yang tepat harus diikuti untuk memastikan bahwa bukti yang diambil dari ponsel tersangka dapat diterima di pengadilan. 
+                    Sedangkan untuk ponsel, lebih menantang karena ponsel saat ini sudah dilengkapi dengan banyak teknologi nirkabel, antara lain Wi-Fi (Wireless-Fidelity), 
+                    Bluetooth, dan seluler. Jika ponsel masih hidup dan terhubung ke jaringan, sangat penting untuk mengisolasi ponsel dari jaringan dan perangkat nirkabel 
+                    di sekitarnya untuk menjaga integritas data yang tersimpan di ponsel. Misalnya, letakkan ponsel di dalam “Tas Faraday”, yang mampu memblokir sinyal Frekuensi 
+                    Radio (RF), termasuk sinyal seluler, satelit, Wifi, dan frekuensi Bluetooth (seperti pada gambar 15.3).</p>
+                  
+                  <p>Ada tiga aspek kunci untuk penyelidikan forensik perangkat seluler yaitu Storage Location, Acquisition Methods, dan Data Analysis. 
+                    Secara khusus, seseorang harus tahu di mana data disimpan, bagaimana data itu disimpan, dan semua izin file terkait sebelum jenis ekstraksi apa pun 
+                    dapat dijalankan. Setelah informasi ini diketahui, data harus diekstraksi. Ini adalah aspek penting dari penyelidikan forensik yang jika sampai memilih 
+                    metode yang tidak tepat dapat merusak penyelidikan. </p>
+                  <ul>
+                    <li><b>Storage Location</b></li>
+                      <p>Untuk mengekstrak dan menganalisis data yang tersimpan di ponsel cerdas, seseorang harus tahu di mana menemukan data yang diinginkan. 
+                        Struktur sistem file tidak identik di semua perangkat Android. Namun, ada lokasi tertentu yang cukup standar (seperti data aplikasi yang disimpan 
+                        di direktori <span class="badge-light text-danger">"/data/data/"</span>). Berikut penggambaran hierarki penyimpanan Android.
+                        <img src="img/mobile-forensik-4.png" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                      </p>
+                      <p>Tingkat atas (merah) mewakili partisi (bagian dari semua partisi); tingkat kedua dan ketiga (masing-masing biru dan hijau) mewakili konten yang ditemukan 
+                        di partisi ini. Partisi <span class="badge-light text-danger">"userdata"</span>, dipasang di <span class="badge-light text-danger">"/data"</span>, 
+                        berisi semua penyimpanan aplikasi pribadi. Ini adalah konten yang dilindungi, hanya dapat diakses oleh setiap aplikasi. Ini adalah pengamatan penting ketika 
+                        mempertimbangkan metode akuisisi data, karena pengguna harus memiliki hak akses root untuk mengakses konten ini secara langsung.</p>
+                      <p>Kedua, partisi <span class="badge-light text-danger">"sdcard"</span> dapat berisi informasi yang berguna seperti gambar/video yang diambil oleh aplikasi 
+                        kamera ponsel cerdas, file yang diunduh, dan penyimpanan aplikasi publik. Lokasi ini dapat diakses oleh siapa pun. Ini adalah lokasi lain untuk mencari konten 
+                        yang relevan secara forensik. Terakhir, log sistem, kernel, dan aplikasi dapat menjadi sumber data yang berharga. Data ini 
+                        “memberikan wawasan tentang aplikasi serta sistem yang menjalankannya”.</p>
+                    
+                    <li><b>Acquisition Methods</b></li>
+                      <p>Penyimpanan ponsel cerdas berpotensi berisi sejumlah besar informasi yang mungkin relevan dalam penyelidikan forensik. Beberapa data ini disebabkan oleh 
+                        aplikasi yang menyimpan informasi secara lokal di smartphone, sementara informasi lainnya disebabkan oleh sistem, kernel, dan log aplikasi. Sekarang kita 
+                        harus menentukan cara mengambil data ini dari smartphone (metode akuisisi). Pertama, kita harus menentukan jenis gambar penyimpanan smartphone yang dapat 
+                        diperoleh, karena gambar tersebut akan dirujuk dibeberapa bagian berikutnya.</p>
+                      <p><b>Gambar Logis</b>, sebagai salinan file dan folder dari penyimpanan perangkat. Ini berarti bahwa ketika data disalin, itu masuk akal; itu dalam bentuk yang 
+                        dapat dikenali. File memiliki header yang tepat. Sistem filenya utuh. Namun, ini berarti bahwa semua file yang dihapus, atau "ruang yang tidak digunakan" 
+                        tampaknya tidak akan disalin. Ini bukan salinan lengkap dari sebuah partisi, melainkan salinan dari konten logis saat ini dari partisi tersebut (atau kumpulan 
+                        folder). Kelebihan: mudah untuk dikerjakan. Kelemahan: beberapa informasi tidak dapat diambil kembali, seperti file yang dihapus.</p>
+                      <p><b>Gambar Fisik</b>, adalah salinan bit-by-bit atau dump data dari perangkat penyimpanan atau partisi. Ini berarti bahwa semua data (baik bagian dari 
+                        gambar logis saat ini, atau file yang dihapus, atau "empty space") akan disalin, dan tidak ada yang hilang. Kelebihan: konten yang telah diambil lebih 
+                        besar daripada gambar logis sehingga data yang lebih berpotensi berguna dapat dipulihkan. Kelemahan: adalah potensi kesulitan dalam merekonstruksi 
+                        data ini, misalnya menggunakan metode seperti file carving.</p>
+                      <p>Sekarang kita bahas metode akuisisi data yang berbeda, menyoroti pro dan kontra, termasuk kombinasi metode perangkat keras dan perangkat lunak.</p>
+                      <ul>
+                        <li><b>Chip-Off</b></li>
+                        <p>Metode ekstraksi data ini rumit dan membutuhkan banyak pengetahuan teknis, ketangkasan, dan kepercayaan diri untuk benar-benar membongkar perangkat seluler. 
+                          Istilah "chip-off" adalah literal, yang berarti bahwa chip flash NAND sebenarnya dikeluarkan dari papan sirkuit, dan dihubungkan langsung dengan alat perangkat 
+                          keras melalui pinnya. Chip ini disolder ke papan sirkuit, artinya alat seperti besi solder diperlukan untuk mengekstrak chip flash secara fisik.</p>
+                        <p>Kelebihan metode ini adalah bahwa meskipun ponsel cerdas yang bersangkutan rusak, masih dimungkinkan untuk mengambil data darinya (selama 
+                            chip flash tidak rusak).</p>
+                        <p>Kelemahan metode ini adalah potensi merusak chip flash saat mengekstraknya dari PCB, membongkar smartphone dengan hati-hati bisa menjadi tugas yang 
+                          memakan waktu dan jika ada batasan waktu yang ketat dalam investigasi maka metode ini mungkin tidak cocok.</p>
+                        
+                        <li><b>JTAG (Joint Test Action Group)</b></li>
+                        <p>JTAG adalah protokol komunikasi, sering kali didukung oleh prosesor “untuk menyediakan akses ke fungsi debug/emulasi mereka”. “Dengan JTAG, Anda terhubung 
+                          langsung ke CPU perangkat dengan menyolder kabel ke bantalan JTAG tertentu pada papan sirkuit cetak”. Koneksi ini (Data IN, Data OUT, Control, Clock; secara kolektif disebut Test Access Port) memungkinkan perangkat lunak JTAG untuk berinteraksi langsung dengan CPU, dan memberikan perintah yang dapat memperoleh "dump memori biner lengkap dari NAND kilat”. Hasil dari ini adalah gambar fisik bit-by-bit lengkap dari memori flash.</p>
+                        <p>Kelebihan JTAG daripada chip-off adalah modifikasi fisik perangkat yang lebih sedikit diperlukan berarti kemungkinan kerusakan chip flash lebih kecil. 
+                          Namun, CPU tidak boleh rusak agar metode ini dapat dilakukan. JTAG mungkin masih berfungsi meskipun perangkat agak rusak, dan tidak dapat melakukan booting. </p>
+                        <p>Kelemahan metode JTAG adalah tidak semua perangkat mendukung JTAG, sambungan Port Tindakan Uji mungkin sulit ditemukan, atau bahkan tidak disertakan pada PCB 
+                          (sadapan TAP perlu ditambahkan secara manual sehingga membuat metode ini lebih invasif); ekstraksinya sendiri relatif lambat.</p>
+                        <li><b>Forensic Software Suit</b></li>
+                        <p>Ada banyak suite perangkat lunak forensik komersial yang tersedia yang dirancang untuk perangkat smartphone. Banyak dari mereka memanfaatkan penyedia konten 
+                          yaitu sebuah fitur Android yang memungkinkan aplikasi untuk berbagi data satu sama lain seperti pesan SMS/MMS, kontak, log panggilan, dll. Fitur berbagi ini 
+                          diperlukan, karena model keamanan Android di mana semua aplikasi memiliki data pribadinya sendiri dan tidak dimaksudkan untuk saling berinteraksi. Metode ini 
+                          memungkinkan perangkat lunak forensik untuk mengambil beberapa data logis dari perangkat Android, namun hanya data yang dapat dibagikan oleh aplikasi tersebut. </p>
+                        <p>Misalnya, perangkat lunak mungkin menunjukkan gambaran statistik tentang berapa banyak pesan yang Anda terima dari satu orang, dan kapan Anda menerimanya. 
+                          Jenis tampilan data ini dapat digunakan untuk mengamati pola perilaku pengguna, yang akan menjadi informasi yang relevan dalam penyelidikan forensik. </p>
+                        <p>Kelemahan metode ini yaitu perangkat lunak ini bisa sangat mahal, dukungan untuk perangkat baru mungkin agak lambat (relatif terhadap manual), 
+                          karena kebutuhan untuk memperbarui perangkat lunak yang sesuai, serta tingkat modifikasi perangkat dapat menjadi masalah (misalnya melalui proses rooting).</p>
+                        <li><b>ADB (Android Debug Bridge)</b></li>
+                        <p>ADB adalah alat baris perintah yang memungkinkan komunikasi antara komputer dan perangkat seluler Android (emulator). Program server klien mencakup 
+                          tiga komponen berikut: Klien (berjalan pada mesin pengembang, dan mengirimkan perintah ke perangkat), Daemon (berjalan sebagai proses latar belakang pada 
+                          perangkat Android, dan menjalankan perintah yang dikirim ke perangkat tersebut dari klien ) dan Server (berjalan sebagai proses latar belakang pada mesin pengembang, 
+                          dan mengelola komunikasi antara klien dan daemon).</p>
+                        <p>Perangkat lunak ini mencakup perintah seperti: Pull (menarik file dari perangkat Android ke mesin lokal), push (menyalin file dari mesin lokal ke perangkat 
+                          Android), shell (mengeksekusi shell di perangkat Android untuk menavigasi file sistem, menjalankan program, dll.), utilitas untuk membuang file log, dll.</p>
+                        <li><b>Backup Applications</b></li>
+                        <p>Jika perangkat Anda tidak di-root, aplikasi pencadangan dapat menggunakan penyedia konten untuk memperoleh jumlah data yang layak. “Penyedia konten mengelola 
+                          akses ke kumpulan data terstruktur, merangkum data, dan menyediakan mekanisme untuk mendefinisikan keamanan data. Penyedia konten adalah antarmuka standar yang 
+                          menghubungkan data dalam satu proses dengan kode yang berjalan di proses lain”. Mekanisme ini tidak akan menyalin semua data aplikasi, karena hanya memiliki 
+                          akses ke aplikasi data yang diprogram untuk dibagikan. Beberapa informasi berguna yang dapat diakses melalui penyedia konten adalah SMS/MMS, log panggilan, kontak, 
+                          kalender, informasi browser, dll. Sedangkan Jika Anda perangkat di-root, maka aplikasi ini mungkin dapat mengakses data yang diistimewakan secara langsung 
+                          (misalnya: membuat salinan lengkap dari direktori <span class="badge-light text-danger">"/data/data/"</span>).<p>
+                        <p>Kelebihan metode ini adalah mudah karena hanya perlu menginstal aplikasi dan biarkan aplikasi melakukan tugasnya.</p>
+                        <p>Kelemahan metode ini seperti terkait integritas perangkat (dengan menginstal aplikasi, Anda sebenarnya memodifikasi partisi 
+                          <span class="badge-light text-danger">"userdata"</span> dan jenis modifikasi ini dapat dianggap tidak dapat diterima), jika rooting perangkat adalah bagian 
+                          dari proses akuisisi, perangkat akan lebih dimodifikasi dan untuk menginstal aplikasi semacam itu, Anda harus memiliki akses ke perangkat (yaitu mengetahui 
+                          kredensial kunci layar), dll. </p>
+                        <li><b>Firmware Update Protocols</b></li>
+                        <p>Sebuah perangkat dapat di-<i>boot</i> ke firmware update atau download mode, dan ketika dalam mode ini proses update firmware dapat berjalan, yang digunakan untuk 
+                          mem-<i>flash</i> firmware sistem baru. Catatan penting adalah bahwa “protokol pembaruan firmware adalah satu-satunya cara untuk mengakses memori flash secara langsung 
+                          melalui S/W”. Oleh karena itu, mungkin ada perintah yang dapat digunakan untuk mengakses memori flash, dan mungkin memperoleh data yang tersimpan didalamnya. 
+                          Program <i>bootloader</i> dan pembaruan firmware dapat dianalisis melalui rekayasa balik untuk menentukan proses dan perintah pembaruan firmware. 
+                          Analisis ini menghasilkan penemuan perintah khusus yang dapat digunakan untuk mendapatkan citra fisik memori. </p>
+                        <p>Kelebihan metode ini yaitu mampu memulihkan informasi dari banyak ponsel pintar tanpa memengaruhi integritas data perangkat, mampu memulihkan gambar fisik 
+                          yang menyediakan lebih banyak data daripada gambar logis dan mampu memulihkan citra fisik tanpa harus membongkar smartphone sehingga tidak merusak sirkuit internal.</p>
+                        <li><b>Custom Recovery Image</b></li>
+                        <p>Metode ini mampu mendapatkan gambar logis dan fisik dari penyimpanan perangkat. Metode ini memerlukan modifikasi partisi pemulihan namun tidak akan memengaruhi data 
+                          karena sebagian besar konten yang menarik terletak di partisi <span class="badge-light text-danger">"userdata"</span>.</p>
+                        <p>Kelebihan metode ini yaitu pelaksanaannya relatif mudah, Setelah gambar pemulihan khusus dibuat, langkah-langkah yang diperlukan untuk mengekstrak 
+                            informasi menjadi sederhana, tingkat modifikasi perangkat lebih sedikit, Gambar fisik dan logis dapat diperoleh, Fleksibilitas ini sangat baik (Seorang 
+                            penyelidik bisa mulai dengan menganalisis gambar logis, dan kemudian menganalisis gambar fisik jika diperlukan) dan tidak diperlukan pengetahuan tentang 
+                            kredensial kunci layar.</p>
+                        <p>Kelemahan metode ini yaitu gambar pemulihan khusus harus dibuat yang mendukung perangkat yang berbeda (bisa menjadi tugas yang memakan waktu, namun hanya perlu 
+                          dilakukan sekali untuk setiap perangkat), penyimpanan perangkat agak dimodifikasi (namun modifikasi ini terbatas pada partisi pemulihan), terpisah dari informasi 
+                          aplikasi yang tersimpan dan <i>boot-loader</i> perangkat dapat dikunci sehingga proses ekstraksi menjadi lebih sulit. </p>
+                        
+                        <p></p>
+                      </ul>
+                    
+                      <li><b>Data Analysis</b></li>
+                      <img src="img/mobile-forensik-0.png" alt="mobile-forensik-1" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto; margin-bottom: 1px;">
+                      <p>Setelah mengekstrak data dari telepon, sampai pada langkah analisis data untuk tujuan forensik. Pendekatan analisis data bervariasi dengan aplikasi Android seperti 
+                        pesan instan, panggilan telepon, browser web, dan sebagainya. Dengan kata lain, setiap aplikasi memerlukan metode analisis forensik yang unik. 
+                        Dalam sebagian besar karya ini, data dianalisis dan aktivitas atau kebiasaan pengguna diselidiki dari aspek-aspek berikut (namun tidak terbatas pada):</p>
+                        <ul>
+                          <li><b>Analysis of contact information</b>: Informasi kontak memungkinkan penyelidik untuk menentukan dengan siapa pengguna melakukan kontak. Dengan menganalisis 
+                            daftar kontak, stempel waktu kontak telah ditambahkan ke database, atau status yang diblokir dari kontak tertentu, perilaku pengguna atau informasi kontaknya 
+                            diungkapkan kepada penyelidik.</li>
+                          <li><b>Analysis of exchanged messages</b>: Kronologi pesan yang dipertukarkan dapat direkonstruksi dengan menentukan stempel waktu dari pesan yang dipertukarkan, 
+                            data yang dibawa, set pengguna yang terlibat dalam percakapan, dan apakah dan kapan pesan itu benar-benar diterima oleh penerimanya. Informasi ini memberi para 
+                            penyelidik hubungan pengirim dan penerima sampai batas tertentu.</li>
+                          <li><b>Analysis of deletions</b>: Dalam beberapa aplikasi, catatan yang dihapus disimpan di perangkat selama beberapa waktu. Misalnya, dalam database SQLite, 
+                            penghapusan dapat dipulihkan dari apa yang disebut sel yang tidak terisi, yaitu ruang kosong yang disimpan dalam file yang sesuai dengan database. Penghapusan 
+                            ini memberikan beberapa panduan untuk penyelidikan.</li>
+                        </ul>
+                      <p>Banyak aplikasi jejaring sosial yang terintegrasi ke dalam smartphone baru, sehingga penyidik mungkin dapat menemukan bukti yang relevan pada smartphone 
+                        tersangka dalam kasus yang melibatkan jejaring sosial.</p>
+                    </ul>
+                  <br>
+
+                <h3>GPS FORENSICS</h3>
+                  <p>Komunitas penegak hukum telah melihat peningkatan penggunaan perangkat Global Positioning System (GPS) sebagai instrumen kejahatan, atau sebagai 
+                    "perangkat saksi", karena fitur yang secara otonom mengumpulkan dan mencatat data posisi selama kejahatan. Perangkat GPS menjadi bagian integral dari banyak 
+                    penyelidikan. Perangkat GPS tidak hanya berguna untuk penyelidikan digital; namun juga dapat memberikan bukti bahwa perangkat berada di lokasi tertentu pada 
+                    tanggal dan waktu tertentu. </p>
+                  <h5>1. The GPS System</h5>
+                  <p>GPS adalah sistem navigasi radio di seluruh dunia yang dibentuk dari konstelasi 27 satelit (24 beroperasi dan 3 tambahan jika salah satunya gagal) dan stasiun 
+                    buminya yang mengelola satelit. Ada sejumlah aplikasi GPS; dua aplikasi yang paling populer adalah <b>GPS Tracking</b> dan <b>GPS Navigation</b>. 
+                    Keduanya beroperasi berdasarkan 
+                    prinsip trilaterasi menggunakan satelit. Perangkat GPS berkomunikasi dengan satelit menggunakan sinyal radio frekuensi tinggi berdaya rendah yang berjalan dari 
+                    satelit ke perangkat. Dengan mengukur waktu tempuh sinyal secara tepat, perangkat dapat menghitung dengan tepat seberapa jauh jaraknya dari satelit; 
+                    RADAR menggunakan prinsip yang sama untuk mendeteksi objek yang jauh.</p>
+                  <p>Satelit secara terus-menerus menyiarkan sinyal ke perangkat GPS, dan informasi dalam sinyal berisi informasi yang dapat diidentifikasi dari satelit, lokasi 
+                    saat ini, dan tanggal dan waktu saat ini (atau waktu sinyal dikirim). Setelah menerima sinyal, perangkat GPS menghitung perbedaan antara waktu sinyal dikirim 
+                    dan waktu diterima. Kemudian ia tahu berapa lama sinyal yang dibutuhkan untuk mencapai penerima dari satelit. Karena kita mengetahui bahwa sinyal radio 
+                    bergerak dengan kecepatan cahaya (186.000 mil/s), kita dapat memperoleh jarak antara satelit dan perangkat GPS dengan mengalikan waktu tempuh sinyal dengan 
+                    kecepatan cahaya (Gambar 16.1). </p>
+                    <img src="img/mobile-forensik-5.png" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+
+                  <p>Berikut struktur logis perangkat GPS (Gambar 16.2):</p>
+                  <ul>
+                    <li><b>GPS receiver</b> adalah unit elektronik yang dapat menentukan posisi pengguna saat ini melalui analisis gelombang radio yang dikirim oleh satelit GPS.</li>
+                    <li><b>Build-in map</b> memberikan tampilan peta kepada pengguna dengan memetakan posisi yang dihitung menurut sinyal yang disiarkan oleh satelit ke lokasi 
+                      fisik di dunia. Selain itu, dapat menentukan kecepatan pengguna sesuai dengan gerakannya serta dapat menurunkan perilaku mengemudi pengemudi.</li>
+                    <li><b>Network connectivity</b> yaitu perangkat GPS dilengkapi dengan teknologi nirkabel. .</li>
+                  </ul>
+                  <br>
+
+                  <h5>2. GPS Evidentiary Data</h5>
+                  <p>Perangkat GPS saat ini berisi banyak data yang menarik bagi penyelidik forensik. Ada banyak jenis data bukti berharga yang dapat dipulihkan dari perangkat 
+                    GPS tergantung pada pabrikan dan modelnya seperti:</p>
+                    <ul>
+                      <li>Log Track</li>
+                      <li>Trackpoints</li>
+                      <li>Waypoints, yaitu lokasi geografis yang ditentukan oleh pengguna menggunakan koordinat</li>
+                      <li>Rute, yaitu jalur dari titik awal ke tujuan yang ditentukan oleh pengguna</li>
+                      <li>Lokasi tersimpan, termasuk Lokasi Rumah dan Favorit</li>
+                      <li>Tujuan terkini, yaitu alamat perjalanan yang telah dilakukan pengguna perangkat GPS</li>
+                      <li>Riwayat perangkat yang dipasangkan (misalnya, ponsel) yang terhubung ke perangkat GPS melalui Bluetooth</li>
+                      <li>Video, Foto, Audio</li>
+                      <li>Riwayat panggilan, nomor telepon kontak, dan pesan SMS dari telepon yang terhubung</li>
+                    </ul>
+                <br>
+
+                <h3>SIM CARDS FORENSICS</h3>
+                  <h5>1. The Subscriber Identification Module (SIM)</h5>
+                  <p>SIM merupakan kartu elektronik kecil yang menyimpan identitas pengguna telepon seluler resmi untuk jaringan seluler GSM, juga menyimpan kunci enkripsi yang 
+                    digunakan dalam otentikasi pengguna dijaringan seluler. Penyedia layanan jaringan menggunakan kartu SIM untuk mengotentikasi pengguna ke jaringannya. Dengan 
+                    demikian, peran utama kartu SIM adalah memberikan dan membuktikan identitas. Selain itu, kartu SIM juga berfungsi untuk menyediakan memori kecil bagi pengguna 
+                    untuk menyimpan kontak dan menyimpan log panggilan dan SMS.</p>
+                  <img src="img/mobile-forensik-6.png" class="img-responsive img-thumbnail" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+                  <p>Kartu ini tersedia dalam berbagai ukuran seperti kartu SIM Mini, Mikro, dan Nano seperti yang ditunjukkan pada Gambar 17.2. saat ini ada juga istilah kartu 
+                    multi-SIM yaitu kartu SIM dikirim dalam satu ukuran yang cocok untuk segala hal, sehingga kartu SIM Nano dapat diambil dari kartu SIM Mikro, yang juga dapat 
+                    dikeluarkan dari kartu SIM Reguler, ditunjukkan pada gambar 17.3. </p>
+                  <p>Semua kartu SIM terdiri dari dua bagian penyimpanan data yaitu sebagai berikut.</p>
+                  <ul>
+                    <li>Bagian untuk informasi sistem yang menyimpan tiga informasi penting yaitu nomor ICCID (Integrated Circuit Card ID) adalah nomor seri kartu SIM; IMSI 
+                      (International Mobile Subscriber Identity) untuk mengidentifikasi pelanggan di jaringan; dan MSISDN (Mobile Subscriber Integrated Services Digital Network 
+                      Number) adalah nomor telepon perangkat; serta LAI (Location Area Identity) untuk melacak area zona perangkat yang menyimpan kartu SIM untuk menyediakan zona 
+                      layanan yang tersedia. Informasi ini sangat penting untuk melihat riwayat lokasi perangkat serta pemegang perangkat. </li>
+                    <li>Bagian untuk informasi pengguna yang dikunci oleh kode PIN pengguna.</li>
+                  </ul>
+                
+                  <h5>2. SIM Architecture</h5>
+                  <img src="img/mobile-forensik-7.png" class="img-responsive img-thumbnail float-right" style="max-width: 100%; height: auto; display: block; margin-left: 20px; margin-right: auto;">
+                  <p>Kartu SIM sebagai sistem cerdas apa pun terdiri dari prosesor, memori, dan sistem operasi. Mikroprosesor dan OS dapat berupa kartu Java yang menggunakan 
+                    platform bahasa pemrograman Java untuk perangkat yang disematkan atau eksklusif untuk penerbit. Chip SIM yang sebenarnya ditutupi oleh bingkai plastik. 
+                    Namun, hanya permukaan koneksi (ditunjukkan pada Gambar 17.4) yang terpapar ke dunia luar yang menyimpan komunikasi antara perangkat dan kartu SIM melalui 
+                    antarmuka serial. </p>
+                  <p>Kartu SIM terdiri dari memori volatile dan non-volatile:</p>
+                  <ul>
+                    <li>Memori Volatile = RAM (Random Access Memory) untuk menjalankan program dalam kartu SIM. </li>
+                    <li>Memori Non-Volatile = ROM (Read Only Memory) untuk menyimpan sistem operasi serta data keamanan bawaan (skema enkripsi dan otentikasi pengguna) dan 
+                      EEPROM (Electrically Erasable Programmable Read Only Memory) berisi data utama dan memiliki struktur sistem file berbasis hierarki.</li>
+                  </ul>
+                  <p></p>
+                  
+                  
+                  <h5>3. Security</h5>
+                  <p>Sistem keamanan pada kartu SIM berupa PIN (Personal Identification Number) dan PUK (Personal Unlocking Key):</p>
+                  <ul>
+                    <li><b>PIN</b> digunakan untuk melindungi data pelanggan dimana kode ini (4–8 digit) digunakan untuk verifikasi. Ada sejumlah percobaan 
+                      untuk memasukkan kode PIN yang valid (biasanya 3 kali) dan kegagalan memberikan kode PIN yang valid akan memblokir kartu SIM. 
+                      Sehingga disarankan untuk mengeluarkan kartu SIM diawal proses forensik. Sayangnya, tanpa membuka kunci kode PIN, penyidik tidak dapat 
+                      mengekstrak data pengguna dari sistem file SIM. Selain itu, penyidik dapat memperoleh kode PIN default menggunakan dokumentasi penyedia layanan 
+                      (biasanya kode PIN default adalah 0000).</li>
+                    <li><b>PUK</b> digunakan untuk mengatur ulang kode PIN yang terlupakan. Memasukkan kode PUK juga memiliki jumlah upaya tertentu (biasanya 10 kali) 
+                      dimana alat forensik tidak memberikan upaya tanpa batas untuk menebak nomor PUK dan kegagalan memberikan kode PUK yang valid akan memblokir 
+                      kartu SIM tanpa henti. Selain itu, kode PUK dapat diperoleh oleh penyedia layanan jaringan menggunakan nomor ICCID yang dapat ditemukan di sistem file atau 
+                       tercetak di SIM itu sendiri. Namun setiap penyedia layanan memiliki kebijakan untuk menyimpan kode PUK masing-masing pelanggan dimana ada <i>time to live limit</i> 
+                       untuk semua kode PUK. Oleh karena itu, dalam beberapa kasus, penyidik tidak dapat memulihkan kode PUK jadi kode PIN. 
+                       Dalam hal ini, data pengguna di dalam kartu SIM tidak akan diekstraksi lagi dan hanya data sistem yang dapat membantu dalam penyelidikan.</li>
+                  </ul>
+                  
+                  <h5>4. Evidence Extraction</h5>
+                  <p>Untuk kartu SIM, kontak, log panggilan, dan pesan SMS disimpan dalam sistem file EF. Untuk menemukan bukti-bukti ini, data yang diekstraksi harus didekodekan 
+                    untuk membantu penyidik membaca bukti yang diekstraksi. Mengapa penting untuk melihat bukti di dalam memori SIM sementara kontak, log panggilan, dan SMS dapat 
+                    diambil dari perangkat itu sendiri? Karena kontak yang disimpan diperangkat mungkin berbeda dari kontak yang disimpan di SIM secara 
+                    langsung. Selain itu, beberapa SMS yang dihapus dapat dipulihkan dari memori kartu SIM.</p>
+              </div>
+            </div>
+          </div> <!-- Akhir Col-12 -->
+       
+        </div>
+    </div>
+<!-- Akhir Content -->
+
+<!-- Awal Referensi -->        
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Referensi</h1>
+    <p class="lead text-center">
+      Lin X. (2018). <b>Introductory Computer Forensics</b>. Springer, Cham. <a href="https://link.springer.com/book/10.1007/978-3-030-00581-8" target="_blank">https://link.springer.com/book/10.1007/978-3-030-00581-8</a><br>
+    </p>
+  </div>
+</div>
+<!-- Akhir Referensi -->
+
+<!-- Awal Footer -->
+<footer class="warna-bg">
+  <div class="text-white text-center pt-3 pb-3">
+    &copy; 2021 Universitas Hasanuddin
+  </div>
+</footer>
+<!-- Akhir Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html> 
